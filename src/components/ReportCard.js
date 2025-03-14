@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "./styles/ReportCard.css"; // If inside styles folder
+import "../styles/ReportCard.css"; // If inside styles folder
 
 
 const ReportCard = () => {
