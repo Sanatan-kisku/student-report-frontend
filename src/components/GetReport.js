@@ -12,8 +12,18 @@ const GetReport = () => {
   const [report, setReport] = useState(null);
 
   const fetchReport = async () => {
+    // Convert date format from "YYYY-MM-DD" to "DD.MM.YYYY"
+    const formattedDOB = form.dob.split("-").reverse().join(".");
+
+    const formattedForm = {
+      class: form.class.toUpperCase(), // Ensure "VI"
+      section: form.section.toUpperCase(), // Ensure "A" or "B"
+      rollNumber: parseInt(form.rollNumber), // Ensure number format
+      dob: formattedDOB, // Convert "YYYY-MM-DD" to "DD.MM.YYYY"
+    };
+
     try {
-      const response = await axios.post("https://student-report-backend.onrender.com/getReport", form);
+      const response = await axios.post("https://student-report-backend.onrender.com/getReport", formattedForm);
       setReport(response.data);
     } catch (error) {
       alert("Student not found!");
