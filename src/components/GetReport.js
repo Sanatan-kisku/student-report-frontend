@@ -9,7 +9,7 @@ const GetReport = () => {
     rollNumber: "",
     dob: "",
   });
-  const [report, setReport] = useState(null);
+  const [_, setReport] = useState(null);
   const navigate = useNavigate();
 
   const fetchReport = async () => {
