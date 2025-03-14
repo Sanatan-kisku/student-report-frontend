@@ -1,15 +1,16 @@
 import React from "react";
-import UploadFiles from "./components/UploadFiles";
-import GetReport from "./components/GetReport";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GetReport from "./GetReport";
+import ReportCard from "./ReportCard";
 
 function App() {
   return (
-    <div>
-      <h1>Student Report Card System</h1>
-      <UploadFiles />
-      <hr />
-      <GetReport />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<GetReport />} />
+        <Route path="/report-card" element={<ReportCard />} />
+      </Routes>
+    </Router>
   );
 }
 
