@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./styles/GetReport.css"; // Ensure this file exists
+import "../styles/GetReport.css"; // Ensure this file exists
 
 const classMapping = {
   6: "VI",
