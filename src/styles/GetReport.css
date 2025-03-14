@@ -10,17 +10,17 @@
 }
 
 .school-heading {
-  font-weight: bold;
+  font-size: 38px;
+  font-weight: 700;
   text-align: center;
   margin: 50px;
   font-family: 'Poppins', sans-serif;
   background-image: linear-gradient(90deg, #fff241, #ff4b2b, #ff416c);
-  /* background-size: 200% 100%; */
-  font-size: 38px;
-  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
+} 
 
 .form-box {
   background: rgba(255, 255, 255, 0.9);
