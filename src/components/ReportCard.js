@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import "./styles/ReportCard.css"; // Ensure styling
+import "../styles/ReportCard.css"; // Ensure styling
 
 const ReportCard = () => {
   const location = useLocation();
