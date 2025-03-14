@@ -7,22 +7,33 @@ const UploadFiles = () => {
   const [academicFile, setAcademicFile] = useState(null);
 
   const handleUpload = async () => {
-    if (!studentFile || !academicFile) {
-      toast.error("Both files are required!");
+    if (!selectedFiles.studentInfo || !selectedFiles.academicProgress) {
+      alert("Please select both Excel files.");
       return;
     }
 
     const formData = new FormData();
-    formData.append("studentInfo", studentFile);
-    formData.append("academicProgress", academicFile);
+    formData.append("studentInfo", selectedFiles.studentInfo);
+    formData.append("academicProgress", selectedFiles.academicProgress);
+
+    const token = localStorage.getItem("adminToken"); // Get token from storage
+
+    if (!token) {
+      alert("You must log in as an admin first.");
+      return;
+    }
 
     try {
-      await axios.post("https://student-report-backend.onrender.com/upload", formData);
-      toast.success("Files uploaded successfully!");
+      const response = await axios.post("https://student-report-backend.onrender.com/upload", formData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      alert(response.data); // Show success message
     } catch (error) {
-      toast.error("Error uploading files");
+      console.error("Upload error:", error.response?.data || error);
+      alert("Error uploading files. Check console.");
     }
   };
+
 
   return (
     <div>
