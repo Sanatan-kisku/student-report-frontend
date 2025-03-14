@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../styles/GetReport.css"; // Ensure this file exists
+import "./styles/GetReport.css"; // Ensure this file exists
+
+const classMapping = {
+  6: "VI",
+  7: "VII",
+  8: "VIII",
+  9: "IX",
+  10: "X",
+  11: "XI",
+  12: "XII",
+};
 
 const GetReport = () => {
   const [form, setForm] = useState({
@@ -15,9 +25,10 @@ const GetReport = () => {
 
   const fetchReport = async () => {
     const formattedDOB = form.dob.split("-").reverse().join(".");
+    const formattedClass = classMapping[form.class]; // Convert 6 to "VI", 7 to "VII", etc.
 
     const formattedForm = {
-      class: form.class.toUpperCase(),
+      class: formattedClass, // Send "VI" instead of 6
       section: form.section.toUpperCase(),
       rollNumber: parseInt(form.rollNumber),
       dob: formattedDOB,
