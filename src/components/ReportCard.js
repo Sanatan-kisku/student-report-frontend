@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import "./styles/ReportCard.css"; // Ensure correct styling
+import "../styles/ReportCard.css"; // Ensure correct styling
 
 const ReportCard = () => {
   const location = useLocation();
