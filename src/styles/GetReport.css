@@ -2,8 +2,17 @@
   background: url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.school-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .form-box {
@@ -12,46 +21,36 @@
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 300px;
+  width: 350px;
 }
 
 h2 {
-  color: #ffcc00;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-row div {
+  flex: 1;
+  margin: 0 5px;
 }
 
 label {
   display: block;
-  margin-top: 10px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 select, input {
   width: 100%;
   padding: 8px;
-  margin-top: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
-}
-
-.roll-number-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.roll-number-box button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.roll-number-box input {
-  text-align: center;
-  font-size: 18px;
-  width: 60px;
 }
 
 .get-report-btn {

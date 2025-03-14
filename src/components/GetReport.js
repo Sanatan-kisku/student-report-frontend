@@ -45,32 +45,41 @@ const GetReport = () => {
 
   return (
     <div className="get-report-container">
+      <h1 className="school-heading">Odisha Adarsha Vidyalaya, Surada, Ganjam</h1>
       <div className="form-box">
         <h2>Student Report Card</h2>
-        <label>Class</label>
-        <select value={form.class} onChange={(e) => setForm({ ...form, class: e.target.value })}>
-          {[...Array(7)].map((_, i) => (
-            <option key={i} value={i + 6}>{i + 6}</option>
-          ))}
-        </select>
-
-        <label>Section</label>
-        <select value={form.section} onChange={(e) => setForm({ ...form, section: e.target.value })}>
-          <option value="A">A</option>
-          <option value="B">B</option>
-        </select>
-
-        <label>Roll Number</label>
-        <input
-          type="number"
-          value={form.rollNumber}
-          onChange={(e) => setForm({ ...form, rollNumber: e.target.value })}
-          min="1"
-        />
-
-        <label>Date of Birth</label>
-        <input type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
-
+        <div className="form-row">
+          <div>
+            <label>Class</label>
+            <select value={form.class} onChange={(e) => setForm({ ...form, class: e.target.value })}>
+              {[...Array(7)].map((_, i) => (
+                <option key={i} value={i + 6}>{i + 6}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label>Section</label>
+            <select value={form.section} onChange={(e) => setForm({ ...form, section: e.target.value })}>
+              <option value="A">A</option>
+              <option value="B">B</option>
+            </select>
+          </div>
+          <div>
+            <label>Roll Number</label>
+            <input
+              type="number"
+              value={form.rollNumber}
+              onChange={(e) => setForm({ ...form, rollNumber: e.target.value })}
+              min="1"
+            />
+          </div>
+        </div>
+        <div className="form-row">
+          <div>
+            <label>Date of Birth</label>
+            <input type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
+          </div>
+        </div>
         <button className="get-report-btn" onClick={fetchReport}>Get Report</button>
       </div>
     </div>
