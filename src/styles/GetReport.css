@@ -16,6 +16,7 @@
   margin: 50px;
   font-family: 'Poppins', sans-serif;
   background-image: linear-gradient(90deg, #fff241, #ff4b2b, #ff416c);
+  background-size: 200% 100%; 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
@@ -73,4 +74,24 @@ select, input {
 
 .get-report-btn:hover {
   background: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .school-heading {
+    font-size: 28px;
+    margin: 10px;
+  }
+
+  .form-box {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row div {
+    min-width: unset;
+  }
 }
