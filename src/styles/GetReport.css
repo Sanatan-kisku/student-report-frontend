@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 .get-report-container {
   background: url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   height: 100vh;
@@ -8,11 +10,16 @@
 }
 
 .school-heading {
-  font-size: 24px;
   font-weight: bold;
-  color: #ffcc00;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 50px;
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(90deg, #fff241, #ff4b2b, #ff416c);
+  /* background-size: 200% 100%; */
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .form-box {
