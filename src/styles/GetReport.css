@@ -1,5 +1,5 @@
 .get-report-container {
-  background: url('/OAVSuradaSchool.jpg') no-repeat center center/cover;
+  background: url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
