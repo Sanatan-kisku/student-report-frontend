@@ -13,7 +13,7 @@ const GetReport = () => {
 
   const fetchReport = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/getReport", form);
+      const response = await axios.post("https://student-report-backend.onrender.com/getReport", form);
       setReport(response.data);
     } catch (error) {
       alert("Student not found!");

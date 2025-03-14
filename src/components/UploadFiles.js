@@ -17,7 +17,7 @@ const UploadFiles = () => {
     formData.append("academicProgress", academicFile);
 
     try {
-      await axios.post("http://localhost:5000/upload", formData);
+      await axios.post("https://student-report-backend.onrender.com/upload", formData);
       toast.success("Files uploaded successfully!");
     } catch (error) {
       toast.error("Error uploading files");
