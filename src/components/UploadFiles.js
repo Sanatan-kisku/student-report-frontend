@@ -8,10 +8,17 @@ const UploadFiles = () => {
   });
 
   const handleFileChange = (event) => {
-    setSelectedFiles({
-      ...selectedFiles,
-      [event.target.name]: event.target.files[0],
-    });
+    const file = event.target.files[0];
+
+    if (!file) {
+      alert("No file selected.");
+      return;
+    }
+
+    setSelectedFiles((prevFiles) => ({
+      ...prevFiles,
+      [event.target.name]: file,
+    }));
   };
 
   const handleUpload = async () => {
@@ -34,11 +41,15 @@ const UploadFiles = () => {
     try {
       const response = await axios.post("https://student-report-backend.onrender.com/upload", formData, {
         headers: { Authorization: `Bearer ${token}` },
+        onUploadProgress: (progressEvent) => {
+          console.log(`Upload Progress: ${Math.round((progressEvent.loaded * 100) / progressEvent.total)}%`);
+        },
       });
+
       alert(response.data);
     } catch (error) {
-      console.error("Upload error:", error.response?.data || error);
-      alert("Error uploading files. Check console.");
+      console.error("Upload error:", error);
+      alert(`Error uploading files: ${error.message}`);
     }
   };
 
