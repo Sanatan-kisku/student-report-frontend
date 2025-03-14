@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import GetReport from "./GetReport";
-import ReportCard from "./ReportCard";
+import GetReport from "./components/GetReport";  // Correct path
+import ReportCard from "./components/ReportCard";  // Correct path
 
 function App() {
   return (
