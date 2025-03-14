@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../styles/GetReport.css"; // Ensure this file exists
 
 const GetReport = () => {
   const [form, setForm] = useState({
-    class: "",
-    section: "",
-    rollNumber: "",
+    class: "6",
+    section: "A",
+    rollNumber: 1,
     dob: "",
   });
   const [_, setReport] = useState(null);
@@ -32,13 +33,34 @@ const GetReport = () => {
   };
 
   return (
-    <div>
-      <h2>Student Report Card</h2>
-      <input placeholder="Class" onChange={(e) => setForm({ ...form, class: e.target.value })} />
-      <input placeholder="Section" onChange={(e) => setForm({ ...form, section: e.target.value })} />
-      <input placeholder="Roll Number" onChange={(e) => setForm({ ...form, rollNumber: e.target.value })} />
-      <input placeholder="Date of Birth" type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
-      <button onClick={fetchReport}>Get Report</button>
+    <div className="get-report-container">
+      <div className="form-box">
+        <h2>Student Report Card</h2>
+        <label>Class</label>
+        <select value={form.class} onChange={(e) => setForm({ ...form, class: e.target.value })}>
+          {[...Array(7)].map((_, i) => (
+            <option key={i} value={i + 6}>{i + 6}</option>
+          ))}
+        </select>
+
+        <label>Section</label>
+        <select value={form.section} onChange={(e) => setForm({ ...form, section: e.target.value })}>
+          <option value="A">A</option>
+          <option value="B">B</option>
+        </select>
+
+        <label>Roll Number</label>
+        <div className="roll-number-box">
+          <button onClick={() => setForm({ ...form, rollNumber: Math.max(1, form.rollNumber - 1) })}>-</button>
+          <input type="number" value={form.rollNumber} readOnly />
+          <button onClick={() => setForm({ ...form, rollNumber: form.rollNumber + 1 })}>+</button>
+        </div>
+
+        <label>Date of Birth</label>
+        <input type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
+
+        <button className="get-report-btn" onClick={fetchReport}>Get Report</button>
+      </div>
     </div>
   );
 };
