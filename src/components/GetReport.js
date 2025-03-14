@@ -17,7 +17,7 @@ const GetReport = () => {
   const [form, setForm] = useState({
     class: "6",
     section: "A",
-    rollNumber: 1,
+    rollNumber: "",
     dob: "",
   });
   const [_, setReport] = useState(null);
@@ -25,10 +25,10 @@ const GetReport = () => {
 
   const fetchReport = async () => {
     const formattedDOB = form.dob.split("-").reverse().join(".");
-    const formattedClass = classMapping[form.class]; // Convert 6 to "VI", 7 to "VII", etc.
+    const formattedClass = classMapping[form.class];
 
     const formattedForm = {
-      class: formattedClass, // Send "VI" instead of 6
+      class: formattedClass,
       section: form.section.toUpperCase(),
       rollNumber: parseInt(form.rollNumber),
       dob: formattedDOB,
@@ -61,11 +61,12 @@ const GetReport = () => {
         </select>
 
         <label>Roll Number</label>
-        <div className="roll-number-box">
-          <button onClick={() => setForm({ ...form, rollNumber: Math.max(1, form.rollNumber - 1) })}>-</button>
-          <input type="number" value={form.rollNumber} readOnly />
-          <button onClick={() => setForm({ ...form, rollNumber: form.rollNumber + 1 })}>+</button>
-        </div>
+        <input
+          type="number"
+          value={form.rollNumber}
+          onChange={(e) => setForm({ ...form, rollNumber: e.target.value })}
+          min="1"
+        />
 
         <label>Date of Birth</label>
         <input type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
