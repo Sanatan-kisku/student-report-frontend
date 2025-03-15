@@ -115,11 +115,11 @@ const ReportCard = () => {
             </tr>
             <tr>
               <td colSpan="4"><strong>RANK</strong></td>
-              <td>{studentInfo.rank}</td>
+              <td colSpan="4">{studentInfo.rank}</td>
             </tr>
             <tr>
               <td colSpan="4"><strong>RESULT</strong></td>
-              <td>{studentInfo.result}</td>
+              <td colSpan="4">{studentInfo.result}</td>
             </tr>
           </tbody>
         </table>
