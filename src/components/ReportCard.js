@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
-import "jspdf-autotable";
 import html2canvas from "html2canvas";
+import "jspdf-autotable";
 import "../styles/ReportCard.css"; // Ensure correct styling
 
 const ReportCard = () => {
@@ -31,13 +31,6 @@ const ReportCard = () => {
       return acc;
     }, []);
 
-  const coScholastic = [
-    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
-    { id: 2, activity: "Art", grade: report["am"] || "-" },
-    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
-    { id: 4, activity: "Music", grade: report["music"] || "-" },
-  ];
-
   const handleDownloadPDF = () => {
     const reportCardElement = document.querySelector(".report-card");
     html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
@@ -50,7 +43,7 @@ const ReportCard = () => {
 
   return (
     <div className="report-container">
-      <div className="report-card">
+      <div className="report-card" id="reportCard">
         <div className="header-section">
           <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
           <div className="school-info center">
@@ -69,7 +62,7 @@ const ReportCard = () => {
         <table>
           <thead>
             <tr>
-              <th>SL NO</th>
+              <th>SL No</th>
               <th>SUBJECT</th>
               <th>PT1</th>
               <th>PT2</th>
@@ -92,31 +85,29 @@ const ReportCard = () => {
                 <td>{report[`ANNUAL ${subject}`] || "-"}</td>
               </tr>
             ))}
+            <tr>
+              <td colSpan="2"><strong>Total Marks</strong></td>
+              <td>{report["PT1 TOTAL MARK"] || "-"}</td>
+              <td>{report["PT2 TOTAL MARK"] || "-"}</td>
+              <td>{report["HY TOTAL MARK"] || "-"}</td>
+              <td>{report["PT3 TOTAL MARK"] || "-"}</td>
+              <td>{report["PT4 TOTAL MARK"] || "-"}</td>
+              <td>{report["ANNUAL TOTAL MARK"] || "-"}</td>
+            </tr>
+            <tr>
+              <td colSpan="2"><strong>Total Percentage</strong></td>
+              <td>{report["PT1 %age"] || "-"}</td>
+              <td>{report["PT2 %age"] || "-"}</td>
+              <td>{report["HY %age"] || "-"}</td>
+              <td>{report["PT3 %age"] || "-"}</td>
+              <td>{report["PT4 %age"] || "-"}</td>
+              <td>{report["ANNUAL %age"] || "-"}</td>
+            </tr>
           </tbody>
         </table>
 
         <h3>Rank: {studentInfo.rank}</h3>
         <h3>Result: {studentInfo.result}</h3>
-
-        <h3 className="table-heading">CO-SCHOLASTIC DETAILS</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>SL No</th>
-              <th>Activity</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-          <tbody>
-            {coScholastic.map((activity) => (
-              <tr key={activity.id}>
-                <td>{activity.id}</td>
-                <td>{activity.activity}</td>
-                <td>{activity.grade}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
 
         <div className="signature-section">
           <p>REMARK</p>
@@ -128,7 +119,7 @@ const ReportCard = () => {
           <p className="parent-signature">Parent's Signature: ______________</p>
         </div>
       </div>
-      <div className="download-btn">
+      <div className="buttons" style={{ textAlign: "center", marginTop: "20px" }}>
         <button onClick={handleDownloadPDF}>Download PDF</button>
         <button onClick={() => navigate("/")}>Return Home</button>
       </div>
