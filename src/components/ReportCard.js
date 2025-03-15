@@ -69,18 +69,20 @@ const ReportCard = () => {
         <table>
           <thead>
             <tr>
-              <th>Subject</th>
+              <th>SL N0</th>
+              <th>SUBJECT</th>
               <th>PT1</th>
               <th>PT2</th>
               <th>HY</th>
               <th>PT3</th>
               <th>PT4</th>
-              <th>Annual</th>
+              <th>ANNUAL</th>
             </tr>
           </thead>
           <tbody>
             {subjects.map((subject) => (
               <tr key={subject}>
+                <td>{index + 1}</td>
                 <td>{subject}</td>
                 <td>{report[`PT1 ${subject}`] || "-"}</td>
                 <td>{report[`PT2 ${subject}`] || "-"}</td>
@@ -125,11 +127,10 @@ const ReportCard = () => {
           </div>
           <p className="parent-signature">Parent's Signature: ______________</p>
         </div>
-
-        <div className="download-btn">
-          <button onClick={handleDownloadPDF}>Download PDF</button>
-          <button onClick={() => navigate("/")}>Return Home</button>
-        </div>
+      </div>
+      <div className="download-btn">
+        <button onClick={handleDownloadPDF}>Download PDF</button>
+        <button onClick={() => navigate("/")}>Return Home</button>
       </div>
     </div>
   );
