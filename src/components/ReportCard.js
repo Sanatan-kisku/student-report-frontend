@@ -96,7 +96,7 @@ const ReportCard = () => {
               </tr>
             ))}
             <tr>
-              <td colSpan="2"><strong>Total Marks</strong></td>
+              <td colSpan="2"><strong>TOTAL MARK</strong></td>
               <td>{report["PT1 TOTAL MARK"] || "-"}</td>
               <td>{report["PT2 TOTAL MARK"] || "-"}</td>
               <td>{report["HY TOTAL MARK"] || "-"}</td>
@@ -105,7 +105,7 @@ const ReportCard = () => {
               <td>{report["ANNUAL TOTAL MARK"] || "-"}</td>
             </tr>
             <tr>
-              <td colSpan="2"><strong>Total Percentage</strong></td>
+              <td colSpan="2"><strong>TOTAL PERCENTAGE</strong></td>
               <td>{report["PT1 %age"] ? parseFloat(report["PT1 %age"]).toFixed(2) : "-"}</td>
               <td>{report["PT2 %age"] ? parseFloat(report["PT2 %age"]).toFixed(2) : "-"}</td>
               <td>{report["HY %age"] ? parseFloat(report["HY %age"]).toFixed(2) : "-"}</td>
@@ -113,11 +113,19 @@ const ReportCard = () => {
               <td>{report["PT4 %age"] ? parseFloat(report["PT4 %age"]).toFixed(2) : "-"}</td>
               <td>{report["ANNUAL %age"] ? parseFloat(report["ANNUAL %age"]).toFixed(2) : "-"}</td>
             </tr>
+            <tr>
+              <td colSpan="4"><strong>RANK</strong></td>
+              <td>{studentInfo.rank}</td>
+            </tr>
+            <tr>
+              <td colSpan="4"><strong>RESULT</strong></td>
+              <td>{studentInfo.result}</td>
+            </tr>
           </tbody>
         </table>
 
-        <h3>Rank: {studentInfo.rank}</h3>
-        <h3>Result: {studentInfo.result}</h3>
+        {/* <h3>Rank: {studentInfo.rank}</h3>
+        <h3>Result: {studentInfo.result}</h3> */}
 
         <h3 className="table-heading">CO-SCHOLASTIC DETAILS</h3>
         <table>
