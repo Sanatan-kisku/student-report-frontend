@@ -167,7 +167,7 @@ const ReportCard = () => {
           <table>
             <tr>
               <td><b>REMARK:</b></td>
-              <td></td>
+              <td colSpan="5"></td>
             </tr>
             <tr>
               <td><b>CLASS TEACHER</b></td>
@@ -179,7 +179,7 @@ const ReportCard = () => {
             </tr>
             <tr>
               <td><b>PARENT'S SIGNATURE</b></td>
-              <td></td>
+              <td colSpan="5"></td>
             </tr>
           </table>
         </div>
