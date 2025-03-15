@@ -29,10 +29,6 @@ const ReportCard = () => {
       return acc;
     }, []);
 
-  const formatPercentage = (value) => {
-    return value !== "-" ? parseFloat(value).toFixed(2) : "-";
-  };
-
   const totalMarks = {
     PT1: report["PT1 TOTAL MARK"] || "-",
     PT2: report["PT2 TOTAL MARK"] || "-",
@@ -43,25 +39,32 @@ const ReportCard = () => {
   };
 
   const totalPercentage = {
-    PT1: formatPercentage(report["PT1 %age"] || "-"),
-    PT2: formatPercentage(report["PT2 %age"] || "-"),
-    HY: formatPercentage(report["HY %age"] || "-"),
-    PT3: formatPercentage(report["PT3 %age"] || "-"),
-    PT4: formatPercentage(report["PT4 %age"] || "-"),
-    Annual: formatPercentage(report["ANNUAL %age"] || "-"),
+    PT1: report["PT1 %age"] || "-",
+    PT2: report["PT2 %age"] || "-",
+    HY: report["HY %age"] || "-",
+    PT3: report["PT3 %age"] || "-",
+    PT4: report["PT4 %age"] || "-",
+    Annual: report["ANNUAL %age"] || "-",
   };
+
+  const coScholastic = [
+    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
+    { id: 2, activity: "Art", grade: report["am"] || "-" },
+    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
+    { id: 4, activity: "Music", grade: report["music"] || "-" },
+  ];
 
   return (
     <div className="report-container">
       <div className="report-card">
         <div className="header-section">
-          <img src="/OdishaLogo.svg.png" alt="Left" className="header-image" style={{ height: "130px" }} />
+          <img src="/OdishaLogo.svg.png" alt="Left" className="header-image" />
           <div className="school-info">
             <p>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</p>
             <p>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</p>
             <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
           </div>
-          <img src="/OavLogo.jpeg" alt="Right" className="header-image" style={{ height: "130px" }} />
+          <img src="/OavLogo.jpeg" alt="Right" className="header-image" />
         </div>
         <h2>PROGRESS REPORT CARD 2024-25</h2>
         <p><strong>Name:</strong> {studentInfo.name}</p>
@@ -97,14 +100,34 @@ const ReportCard = () => {
         <h3>Rank: {studentInfo.rank}</h3>
         <h3>Result: {studentInfo.result}</h3>
 
+        <h3>Co-Scholastic Details</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>SL No</th>
+              <th>Activity</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coScholastic.map((activity) => (
+              <tr key={activity.id}>
+                <td>{activity.id}</td>
+                <td>{activity.activity}</td>
+                <td>{activity.grade}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
         <div className="signature-section">
-          <p className="remarks">Remarks: </p>
-          <div className="signatures">
-            <p style={{ flex: 1, textAlign: "center" }}>Class Teacher: ______________</p>
-            <p style={{ flex: 1, textAlign: "center" }}>Exam Incharge: ______________</p>
-            <p style={{ flex: 1, textAlign: "center" }}>Principal: ______________</p>
+          <p>Remarks:</p>
+          <div className="signatures" style={{ flex: 1 }}>
+            <p>Class Teacher: ______________</p>
+            <p>Exam Incharge: ______________</p>
+            <p>Principal: ______________</p>
           </div>
-          <p className="parent-signature" style={{ textAlign: "center", marginTop: "10px" }}>Parent's Signature: ______________</p>
+          <p className="parent-signature">Parent's Signature: ______________</p>
         </div>
       </div>
     </div>
