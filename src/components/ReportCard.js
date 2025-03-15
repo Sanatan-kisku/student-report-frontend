@@ -56,17 +56,18 @@ const ReportCard = () => {
 
   return (
     <div className="report-container">
-      <div className="header-section">
-        <img src="../../public/OdishaLogo.svg.png" alt="Left" className="header-image" />
-        <div className="school-info">
-          <p>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</p>
-          <p>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</p>
-          <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
-        </div>
-        <img src="../../OavLogo.jpeg" alt="Right" className="header-image" />
-      </div>
 
       <div className="report-card">
+        <div className="header-section">
+
+          <img src="../../public/OdishaLogo.svg.png" alt="Left" className="header-image" />
+          <div className="school-info">
+            <p>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</p>
+            <p>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</p>
+            <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
+          </div>
+          <img src="../../public/OavLogo.jpeg" alt="Right" className="header-image" />
+        </div>
         <h2>PROGRESS REPORT CARD 2024-25</h2>
         <p><strong>Name:</strong> {studentInfo.name}</p>
         <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
@@ -97,11 +98,6 @@ const ReportCard = () => {
             ))}
           </tbody>
         </table>
-        <h3>Total Marks</h3>
-        <p>HY: {totalMarks.HY}, PT1: {totalMarks.PT1}, PT2: {totalMarks.PT2}, PT3: {totalMarks.PT3}, PT4: {totalMarks.PT4}, Annual: {totalMarks.Annual}</p>
-
-        <h3>Total Percentage</h3>
-        <p>HY: {totalPercentage.HY}, PT1: {totalPercentage.PT1}, PT2: {totalPercentage.PT2}, PT3: {totalPercentage.PT3}, PT4: {totalPercentage.PT4}, Annual: {totalPercentage.Annual}</p>
 
         <h3>Rank: {studentInfo.rank}</h3>
         <h3>Result: {studentInfo.result}</h3>
@@ -124,14 +120,15 @@ const ReportCard = () => {
               </tr>
             ))}
           </tbody>
+          <p>Remarks: </p>
+          <p>Class Teacher: &emsp;&emsp; Exam Incharge: &emsp;&emsp;Principal: &emsp;&emsp;</p>
+          <p>Parent's Signature: </p>
         </table>
       </div>
 
-      <p>Remarks: ________________</p>
-      <p>Class Teacher: __________ Exam Incharge: __________ Principal: __________</p>
-      <p>Parent's Signature: __________</p>
     </div>
   );
 };
 
 export default ReportCard;
+
