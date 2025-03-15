@@ -89,6 +89,10 @@
   padding: 20px 0;
 }
 
+.subject, .activity {
+  text-align: left;
+}
+
 .download-btn {
   margin-top: 20px;
   padding: 10px 20px;

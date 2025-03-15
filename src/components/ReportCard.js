@@ -102,7 +102,7 @@ const ReportCard = () => {
             {subjects.map((subject, index) => (
               <tr key={subject}>
                 <td>{index + 1}</td>
-                <td>{subject}</td>
+                <td className="subject">{subject}</td>
                 <td>{report[`PT1 ${subject}`] || "-"}</td>
                 <td>{report[`PT2 ${subject}`] || "-"}</td>
                 <td>{report[`HY ${subject}`] || "-"}</td>
@@ -156,7 +156,7 @@ const ReportCard = () => {
             {coScholastic.map((activity) => (
               <tr key={activity.id}>
                 <td>{activity.id}</td>
-                <td>{activity.activity}</td>
+                <td className="activity">{activity.activity}</td>
                 <td>{activity.grade}</td>
               </tr>
             ))}
