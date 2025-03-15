@@ -34,8 +34,8 @@ const ReportCard = () => {
   const coScholastic = [
     { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
     { id: 2, activity: "Art", grade: report["am"] || "-" },
-    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
-    { id: 4, activity: "Music", grade: report["music"] || "-" },
+    { id: 3, activity: "Work Education", grade: report["pe"] || "-" },
+    { id: 4, activity: "Music", grade: report["am"] || "-" },
   ];
 
   const handleDownloadPDF = () => {
