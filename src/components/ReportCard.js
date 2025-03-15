@@ -70,6 +70,7 @@ const ReportCard = () => {
         <p><strong>Name:</strong> {studentInfo.name}</p>
         <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
 
+        <h2>SCHOLASTIC DETAILS</h2>
         <table>
           <thead>
             <tr>
@@ -121,7 +122,7 @@ const ReportCard = () => {
         </table>
 
         <div className="signature-section">
-          <p>Remarks:</p>
+          <p>REMARK</p>
           <div className="signatures" style={{ flex: 1 }}>
             <p>Class Teacher: ______________</p>
             <p>Exam Incharge: ______________</p>

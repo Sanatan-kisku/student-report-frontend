@@ -36,6 +36,10 @@
   margin-top: 20px;
 }
 
+.signatures {
+  display: flex;
+}
+
 .download-btn {
   margin-top: 20px;
   padding: 10px 20px;
