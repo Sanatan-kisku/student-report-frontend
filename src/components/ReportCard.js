@@ -38,11 +38,13 @@ const ReportCard = () => {
   ];
 
   const handleDownloadPDF = () => {
-    const doc = new jsPDF();
-    doc.text("Student Report Card", 20, 10);
-    doc.text(`Name: ${studentInfo.name}`, 20, 20);
-    doc.text(`Class: ${studentInfo.class} Section: ${studentInfo.section} Roll No: ${studentInfo.rollNumber}`, 20, 30);
-    doc.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
+    const reportCardElement = document.querySelector(".report-card");
+    html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+      pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
+    });
   };
 
   return (
