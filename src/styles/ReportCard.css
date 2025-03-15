@@ -66,7 +66,7 @@
 .report-card th, .report-card td {
   border: 1px solid #000;
   padding: 10px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .report-card th {
@@ -77,13 +77,13 @@
   margin-top: 20px;
 }
 
-.signature {
+.signature-section table {
   width: 100%;
   border-collapse: collapse;
   font-family: "Times New Roman", Times, serif;
 }
 
-.signature th, td {
+.signature-section th, .signature-section td {
   border: none;
   text-align: left;
   padding: 8px;
