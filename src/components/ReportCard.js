@@ -69,7 +69,7 @@ const ReportCard = () => {
         <table>
           <thead>
             <tr>
-              <th>SL N0</th>
+              <th>SL NO</th>
               <th>SUBJECT</th>
               <th>PT1</th>
               <th>PT2</th>
@@ -80,7 +80,7 @@ const ReportCard = () => {
             </tr>
           </thead>
           <tbody>
-            {subjects.map((subject) => (
+            {subjects.map((subject, index) => (
               <tr key={subject}>
                 <td>{index + 1}</td>
                 <td>{subject}</td>
