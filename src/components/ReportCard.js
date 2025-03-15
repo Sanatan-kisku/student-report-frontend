@@ -163,12 +163,10 @@ const ReportCard = () => {
           </tbody>
         </table>
 
+        <H3 className="remark" >REMARK:</H3>
+
         <div className="signature-section">
           <table className="signature">
-            <tr>
-              <td><b>REMARK:</b></td>
-              <td colSpan="5"></td>
-            </tr>
             <tr>
               <td><b>CLASS TEACHER</b></td>
               <td></td>
