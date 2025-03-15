@@ -32,10 +32,10 @@ const ReportCard = () => {
     }, []);
 
   const coScholastic = [
-    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
-    { id: 2, activity: "Art", grade: report["am"] || "-" },
-    { id: 3, activity: "Work Education", grade: report["pe"] || "-" },
-    { id: 4, activity: "Music", grade: report["am"] || "-" },
+    { id: 1, activity: "HEALTH AND PHYSICAL EDUCATION", grade: report["pe"] || "-" },
+    { id: 2, activity: "ART", grade: report["am"] || "-" },
+    { id: 3, activity: "WORK EDUCATION", grade: report["pe"] || "-" },
+    { id: 4, activity: "MUSIC", grade: report["am"] || "-" },
   ];
 
   const handleDownloadPDF = () => {
@@ -85,7 +85,7 @@ const ReportCard = () => {
         <table>
           <thead>
             <tr>
-              <th rowSpan="2">SL No</th>
+              <th rowSpan="2">SL NO</th>
               <th rowSpan="2">SUBJECT</th>
               <th colSpan="6">MARKS SECURED</th>
             </tr>
@@ -147,9 +147,9 @@ const ReportCard = () => {
         <table>
           <thead>
             <tr>
-              <th>SL No</th>
-              <th>Activity</th>
-              <th>Grade</th>
+              <th>SL NO</th>
+              <th>ACTIVITY</th>
+              <th>GRADE</th>
             </tr>
           </thead>
           <tbody>
