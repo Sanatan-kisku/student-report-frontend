@@ -121,8 +121,8 @@ const ReportCard = () => {
             ))}
           </tbody>
           <p>Remarks: </p>
-          <p>Class Teacher: &emsp;&emsp; Exam Incharge: &emsp;&emsp;Principal: &emsp;&emsp;</p>
-          <p>Parent's Signature: </p>
+          <p>Class Teacher:____________________ Exam Incharge:____________________ Principal:____________________</p>
+          <p>Parent's Signature:____________________ </p>
         </table>
       </div>
 
