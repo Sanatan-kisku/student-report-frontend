@@ -77,6 +77,18 @@
   margin-top: 20px;
 }
 
+.signature {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.signature th, td {
+  border: none;
+  text-align: left;
+  padding: 8px;
+}
+
 .download-btn {
   margin-top: 20px;
   padding: 10px 20px;

@@ -164,7 +164,7 @@ const ReportCard = () => {
         </table>
 
         <div className="signature-section">
-          <table>
+          <table className="signature">
             <tr>
               <td><b>REMARK:</b></td>
               <td colSpan="5"></td>
