@@ -106,12 +106,12 @@ const ReportCard = () => {
             </tr>
             <tr>
               <td colSpan="2"><strong>Total Percentage</strong></td>
-              <td>{report["PT1 %age"] || "-"}</td>
-              <td>{report["PT2 %age"] || "-"}</td>
-              <td>{report["HY %age"] || "-"}</td>
-              <td>{report["PT3 %age"] || "-"}</td>
-              <td>{report["PT4 %age"] || "-"}</td>
-              <td>{report["ANNUAL %age"] || "-"}</td>
+              <td>{report["PT1 %age"] ? parseFloat(report["PT1 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["PT2 %age"] ? parseFloat(report["PT2 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["HY %age"] ? parseFloat(report["HY %age"]).toFixed(2) : "-"}</td>
+              <td>{report["PT3 %age"] ? parseFloat(report["PT3 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["PT4 %age"] ? parseFloat(report["PT4 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["ANNUAL %age"] ? parseFloat(report["ANNUAL %age"]).toFixed(2) : "-"}</td>
             </tr>
           </tbody>
         </table>
