@@ -156,7 +156,7 @@ const ReportCard = () => {
             {coScholastic.map((activity) => (
               <tr key={activity.id}>
                 <td>{activity.id}</td>
-                <td style="text-align: left;">{activity.activity}</td>
+                <td>{activity.activity}</td>
                 <td>{activity.grade}</td>
               </tr>
             ))}
