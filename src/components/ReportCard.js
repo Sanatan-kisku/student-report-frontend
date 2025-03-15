@@ -164,13 +164,24 @@ const ReportCard = () => {
         </table>
 
         <div className="signature-section">
-          <p>REMARK</p>
-          <div className="signatures" style={{ flex: 1 }}>
-            <p>Class Teacher: ______________</p>
-            <p>Exam Incharge: ______________</p>
-            <p>Principal: ______________</p>
-          </div>
-          <p className="parent-signature">Parent's Signature: ______________</p>
+          <table>
+            <tr>
+              <td><b>REMARK:</b></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>CLASS TEACHER</b></td>
+              <td></td>
+              <td><b>EXAM INCHARGE</b></td>
+              <td></td>
+              <td><b>PRINCIPAL</b></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>PARENT'S SIGNATURE</b></td>
+              <td></td>
+            </tr>
+          </table>
         </div>
       </div>
       <div className="buttons" style={{ textAlign: "center", marginTop: "20px" }}>
