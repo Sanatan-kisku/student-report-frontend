@@ -17,11 +17,12 @@ const ReportCard = () => {
     rollNumber: report["Roll No."],
     section: report["Section"],
     class: report["class"],
+    rank: report["rank"],
+    result: report["result"],
   };
 
-  // Extract subjects dynamically
   const subjects = Object.keys(report)
-    .filter((key) => key.includes("HY ") || key.includes("PT"))
+    .filter((key) => key.includes("HY ") || key.includes("PT") || key.includes("ANNUAL"))
     .reduce((acc, key) => {
       const subjectName = key.replace(/HY |PT[1-4] |ANNUAL /g, "").trim();
       if (!acc.includes(subjectName)) acc.push(subjectName);
@@ -29,90 +30,50 @@ const ReportCard = () => {
     }, []);
 
   const totalMarks = {
+    HY: report["HY TOTAL MARK"] || "-",
     PT1: report["PT1 TOTAL MARK"] || "-",
     PT2: report["PT2 TOTAL MARK"] || "-",
-    HY: report["HY TOTAL MARK"] || "-",
     PT3: report["PT3 TOTAL MARK"] || "-",
     PT4: report["PT4 TOTAL MARK"] || "-",
     Annual: report["ANNUAL TOTAL MARK"] || "-",
   };
 
   const totalPercentage = {
+    HY: report["HY %age"] || "-",
     PT1: report["PT1 %age"] || "-",
     PT2: report["PT2 %age"] || "-",
-    HY: report["HY %age"] || "-",
     PT3: report["PT3 %age"] || "-",
     PT4: report["PT4 %age"] || "-",
     Annual: report["ANNUAL %age"] || "-",
   };
 
-  const handleDownloadPDF = () => {
-    const doc = new jsPDF();
-    doc.setFont("helvetica", "bold");
-    doc.text("ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM", 20, 10);
-    doc.setFontSize(12);
-    doc.text(`Student: ${studentInfo.name}`, 20, 20);
-    doc.text(`Class: ${studentInfo.class}  Section: ${studentInfo.section}  Roll No: ${studentInfo.rollNumber}`, 20, 30);
-
-    // Table data
-    const tableData = subjects.map((subject) => [
-      subject,
-      report[`PT1 ${subject}`] || "-",
-      report[`PT2 ${subject}`] || "-",
-      report[`HY ${subject}`] || "-",
-      report[`PT3 ${subject}`] || "-",
-      report[`PT4 ${subject}`] || "-",
-      report[`ANNUAL ${subject}`] || "-",
-    ]);
-
-    doc.autoTable({
-      startY: 40,
-      head: [["Subject", "PT1", "PT2", "HY", "PT3", "PT4", "Annual"]],
-      body: tableData,
-    });
-
-    doc.text("Total Marks:", 20, doc.autoTable.previous.finalY + 10);
-    doc.text(`PT1: ${totalMarks.PT1}, PT2: ${totalMarks.PT2}, HY: ${totalMarks.HY}, PT3: ${totalMarks.PT3}, PT4: ${totalMarks.PT4}, Annual: ${totalMarks.Annual}`, 20, doc.autoTable.previous.finalY + 20);
-
-    doc.text("Total Percentage:", 20, doc.autoTable.previous.finalY + 30);
-    doc.text(` PT1: ${totalPercentage.PT1}, PT2: ${totalPercentage.PT2}, HY: ${totalPercentage.HY}, PT3: ${totalPercentage.PT3}, PT4: ${totalPercentage.PT4}, Annual: ${totalPercentage.Annual}`, 20, doc.autoTable.previous.finalY + 40);
-
-    doc.save("Student_Report_Card.pdf");
-  };
+  const coScholastic = [
+    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
+    { id: 2, activity: "Art", grade: report["am"] || "-" },
+    { id: 3, activity: "Work Education", grade: report["pe"] || "-" },
+    { id: 4, activity: "Music", grade: report["am"] || "-" },
+  ];
 
   return (
     <div className="report-container">
+      <div className="header-section">
+        <img src="../../public/OdishaLogo.svg.png" alt="Left" className="header-image" />
+        <div className="school-info">
+          <p>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</p>
+          <p>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</p>
+          <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
+        </div>
+        <img src="../../OavLogo.jpeg" alt="Right" className="header-image" />
+      </div>
 
       <div className="report-card">
-        <div>
-          <div>
-            <img src="../../public/OdishaLogo.svg.png" alt="" />
-            <div>
-              <h1>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</h1>
-              <h2>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108      sorada@oav.edu.in</h2>
-              <h2> (OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</h2>
-            </div>
-            <img src="../../public/OavLogo.jpeg" alt="" />
-          </div>
-        </div>
-        <div>
-          <h2> (OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)
-            Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501
-          </h2>
-        </div>
-        <div>
-          <h1>PROGRESS REPORT CARD 2024-25</h1>
-          <p><strong>Name:</strong> {studentInfo.name}</p>
-          <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
-        </div>
-        <div>
-          <h1>SCHOLASTIC DETAILS</h1>
-        </div>
+        <h2>PROGRESS REPORT CARD 2024-25</h2>
+        <p><strong>Name:</strong> {studentInfo.name}</p>
+        <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
 
         <table>
           <thead>
             <tr>
-              <th>SL NO</th>
               <th>Subject</th>
               <th>HY</th>
               <th>PT1</th>
@@ -126,9 +87,9 @@ const ReportCard = () => {
             {subjects.map((subject) => (
               <tr key={subject}>
                 <td>{subject}</td>
+                <td>{report[`HY ${subject}`] || "-"}</td>
                 <td>{report[`PT1 ${subject}`] || "-"}</td>
                 <td>{report[`PT2 ${subject}`] || "-"}</td>
-                <td>{report[`HY ${subject}`] || "-"}</td>
                 <td>{report[`PT3 ${subject}`] || "-"}</td>
                 <td>{report[`PT4 ${subject}`] || "-"}</td>
                 <td>{report[`ANNUAL ${subject}`] || "-"}</td>
@@ -136,9 +97,39 @@ const ReportCard = () => {
             ))}
           </tbody>
         </table>
+        <h3>Total Marks</h3>
+        <p>HY: {totalMarks.HY}, PT1: {totalMarks.PT1}, PT2: {totalMarks.PT2}, PT3: {totalMarks.PT3}, PT4: {totalMarks.PT4}, Annual: {totalMarks.Annual}</p>
+
+        <h3>Total Percentage</h3>
+        <p>HY: {totalPercentage.HY}, PT1: {totalPercentage.PT1}, PT2: {totalPercentage.PT2}, PT3: {totalPercentage.PT3}, PT4: {totalPercentage.PT4}, Annual: {totalPercentage.Annual}</p>
+
+        <h3>Rank: {studentInfo.rank}</h3>
+        <h3>Result: {studentInfo.result}</h3>
+
+        <h3>Co-Scholastic Details</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>SL No</th>
+              <th>Activity</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coScholastic.map((activity) => (
+              <tr key={activity.id}>
+                <td>{activity.id}</td>
+                <td>{activity.activity}</td>
+                <td>{activity.grade}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <button className="download-btn" onClick={handleDownloadPDF}>Download PDF</button>
+      <p>Remarks: ________________</p>
+      <p>Class Teacher: __________ Exam Incharge: __________ Principal: __________</p>
+      <p>Parent's Signature: __________</p>
     </div>
   );
 };
