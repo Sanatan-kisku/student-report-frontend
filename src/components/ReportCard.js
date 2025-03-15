@@ -66,11 +66,12 @@ const ReportCard = () => {
           </div>
           <img src="/OavLogo.jpeg" alt="Right" className="header-image" />
         </div>
+        <h3>Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501 </h3>
         <h2>PROGRESS REPORT CARD 2024-25</h2>
         <p><strong>Name:</strong> {studentInfo.name}</p>
         <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
 
-        <h3>SCHOLASTIC DETAILS</h3>
+        <h3 className="table-heading">SCHOLASTIC DETAILS</h3>
         <table>
           <thead>
             <tr>
@@ -101,7 +102,7 @@ const ReportCard = () => {
         <h3>Rank: {studentInfo.rank}</h3>
         <h3>Result: {studentInfo.result}</h3>
 
-        <h3>Co-Scholastic Details</h3>
+        <h3 className="table-heading">CO-SCHOLASTIC DETAILS</h3>
         <table>
           <thead>
             <tr>

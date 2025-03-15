@@ -3,7 +3,7 @@
 }
 
 .header-image {
-  height: 130px;
+  width: 96px;
   flex: 1;
 }
 
@@ -11,8 +11,8 @@
   flex: 1;
 }
 
-h3 {
-  color: #007bff;
+.table-heading {
+  color:#0056b3;
 }
 
 .report-card {
