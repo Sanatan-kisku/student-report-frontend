@@ -93,6 +93,7 @@
   border: none;
   text-align: left;
   padding: 20px 0;
+  width: 25%; /* Equal column width */
 }
 
 .subject, .activity {
