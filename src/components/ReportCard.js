@@ -24,7 +24,7 @@ const ReportCard = () => {
   };
 
   const subjects = Object.keys(report)
-    .filter((key) => key.includes("HY ") || key.includes("PT") || key.includes("ANNUAL"))
+    .filter((key) => (key.includes("HY ") || key.includes("PT") || key.includes("ANNUAL")) && !key.includes("TOTAL MARK") && !key.includes("%age"))
     .reduce((acc, key) => {
       const subjectName = key.replace(/HY |PT[1-4] |ANNUAL /g, "").trim();
       if (!acc.includes(subjectName)) acc.push(subjectName);
