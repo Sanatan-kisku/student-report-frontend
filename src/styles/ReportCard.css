@@ -100,7 +100,7 @@
   text-align: left;
 }
 
-.download-btn {
+.download-btn button {
   margin: 20px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -108,10 +108,6 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
-}
-
-.download-btn button {
-  margin: 2opx;
 }
 
 .download-btn:hover {
