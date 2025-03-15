@@ -86,7 +86,7 @@
 .signature-section th, .signature-section td {
   border: none;
   text-align: left;
-  padding: 8px;
+  padding: 20px 0;
 }
 
 .download-btn {
