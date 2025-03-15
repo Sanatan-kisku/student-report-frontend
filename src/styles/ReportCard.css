@@ -23,11 +23,11 @@
 
 .school-info {
   flex: 1;
-  line-height: .5;
+  line-height: .9;
 }
 
 .school-info h2 {
-  font-size: 20px;
+  font-size: 27px;
 }
 
 .header-image {
