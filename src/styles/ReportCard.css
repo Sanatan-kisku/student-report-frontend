@@ -92,8 +92,8 @@
 .signature-section th, .signature-section td {
   border: none;
   text-align: left;
-  padding: 20px 0;
-  width: 25%; /* Equal column width */
+  padding: 30px 0;
+  width: 50%; /* Equal column width */
 }
 
 .subject, .activity {
@@ -110,6 +110,6 @@
   font-size: 16px;
 }
 
-.download-btn:hover {
+.download-btn button:hover {
   background-color: #0056b3;
 }
