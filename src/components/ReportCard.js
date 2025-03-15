@@ -172,7 +172,7 @@ const ReportCard = () => {
               <td></td>
               <td><b>EXAM INCHARGE</b></td>
               <td></td>
-              <td><b>PRINCIPAL</b></td>
+              <td style="text-align: left;"><b>PRINCIPAL</b></td>
               <td></td>
             </tr>
             <tr>
