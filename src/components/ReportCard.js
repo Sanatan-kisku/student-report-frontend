@@ -31,6 +31,13 @@ const ReportCard = () => {
       return acc;
     }, []);
 
+  const coScholastic = [
+    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
+    { id: 2, activity: "Art", grade: report["am"] || "-" },
+    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
+    { id: 4, activity: "Music", grade: report["music"] || "-" },
+  ];
+
   const handleDownloadPDF = () => {
     const reportCardElement = document.querySelector(".report-card");
     html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
@@ -108,6 +115,26 @@ const ReportCard = () => {
 
         <h3>Rank: {studentInfo.rank}</h3>
         <h3>Result: {studentInfo.result}</h3>
+
+        <h3 className="table-heading">CO-SCHOLASTIC DETAILS</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>SL No</th>
+              <th>Activity</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coScholastic.map((activity) => (
+              <tr key={activity.id}>
+                <td>{activity.id}</td>
+                <td>{activity.activity}</td>
+                <td>{activity.grade}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
         <div className="signature-section">
           <p>REMARK</p>
