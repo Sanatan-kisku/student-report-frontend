@@ -14,12 +14,14 @@
 
 .left, .right {
   width: 20%;
-  background-color: #3498db; /* Blue */
 }
 
 .center {
   width: 60%;
-  background-color: #e74c3c; /* Red */
+}
+
+.school-info {
+  display: flex;
 }
 
 .table-heading {
