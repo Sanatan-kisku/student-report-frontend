@@ -58,13 +58,13 @@ const ReportCard = () => {
     <div className="report-container">
       <div className="report-card">
         <div className="header-section">
-          <img src="/OdishaLogo.svg.png" alt="Left" className="header-image" />
-          <div className="school-info">
+          <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
+          <div className="school-info box center">
             <h2>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</h2>
             <h3>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</h3>
             <h4>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</h4>
           </div>
-          <img src="/OavLogo.jpeg" alt="Right" className="header-image" />
+          <img src="/OavLogo.jpeg" alt="Right" className="header-image box right" />
         </div>
         <h3>Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501 </h3>
         <h2>PROGRESS REPORT CARD 2024-25</h2>
