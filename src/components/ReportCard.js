@@ -69,15 +69,15 @@ const ReportCard = () => {
         <table>
           <tr>
             <td colspan="4"><b>NAME OF THE STUDENT</b></td>
-            <td colspan="4"><b>{studentInfo.name}</b></td>
+            <td colspan="4">{studentInfo.name}</td>
           </tr>
           <tr>
             <td><b>CLASS</b></td>
-            <td><b>{studentInfo.class}</b></td>
+            <td>{studentInfo.class}</td>
             <td><b>SEC</b></td>
-            <td><b>{studentInfo.section}</b></td>
+            <td>{studentInfo.section}</td>
             <td><b>ROLL NO</b></td>
-            <td colspan="2"><b>{studentInfo.rollNumber}</b></td>
+            <td colspan="2">{studentInfo.rollNumber}</td>
           </tr>
         </table>
 
