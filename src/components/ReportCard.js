@@ -69,8 +69,11 @@ const ReportCard = () => {
         <table>
           <thead>
             <tr>
-              <th>SL No</th>
-              <th>SUBJECT</th>
+              <th rowSpan="2">SL No</th>
+              <th rowSpan="2">SUBJECT</th>
+              <th colSpan="6">Marks Secured</th>
+            </tr>
+            <tr>
               <th>PT1</th>
               <th>PT2</th>
               <th>HY</th>
