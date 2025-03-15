@@ -30,18 +30,18 @@ const ReportCard = () => {
     }, []);
 
   const totalMarks = {
-    HY: report["HY TOTAL MARK"] || "-",
     PT1: report["PT1 TOTAL MARK"] || "-",
     PT2: report["PT2 TOTAL MARK"] || "-",
+    HY: report["HY TOTAL MARK"] || "-",
     PT3: report["PT3 TOTAL MARK"] || "-",
     PT4: report["PT4 TOTAL MARK"] || "-",
     Annual: report["ANNUAL TOTAL MARK"] || "-",
   };
 
   const totalPercentage = {
-    HY: report["HY %age"] || "-",
     PT1: report["PT1 %age"] || "-",
     PT2: report["PT2 %age"] || "-",
+    HY: report["HY %age"] || "-",
     PT3: report["PT3 %age"] || "-",
     PT4: report["PT4 %age"] || "-",
     Annual: report["ANNUAL %age"] || "-",
@@ -50,23 +50,21 @@ const ReportCard = () => {
   const coScholastic = [
     { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
     { id: 2, activity: "Art", grade: report["am"] || "-" },
-    { id: 3, activity: "Work Education", grade: report["pe"] || "-" },
-    { id: 4, activity: "Music", grade: report["am"] || "-" },
+    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
+    { id: 4, activity: "Music", grade: report["music"] || "-" },
   ];
 
   return (
     <div className="report-container">
-
       <div className="report-card">
         <div className="header-section">
-
-          <img src="../../public/OdishaLogo.svg.png" alt="Left" className="header-image" />
+          <img src="/OdishaLogo.svg.png" alt="Left" className="header-image" />
           <div className="school-info">
             <p>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</p>
             <p>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</p>
             <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
           </div>
-          <img src="../../public/OavLogo.jpeg" alt="Right" className="header-image" />
+          <img src="/OavLogo.jpeg" alt="Right" className="header-image" />
         </div>
         <h2>PROGRESS REPORT CARD 2024-25</h2>
         <p><strong>Name:</strong> {studentInfo.name}</p>
@@ -76,9 +74,9 @@ const ReportCard = () => {
           <thead>
             <tr>
               <th>Subject</th>
-              <th>HY</th>
               <th>PT1</th>
               <th>PT2</th>
+              <th>HY</th>
               <th>PT3</th>
               <th>PT4</th>
               <th>Annual</th>
@@ -88,9 +86,9 @@ const ReportCard = () => {
             {subjects.map((subject) => (
               <tr key={subject}>
                 <td>{subject}</td>
-                <td>{report[`HY ${subject}`] || "-"}</td>
                 <td>{report[`PT1 ${subject}`] || "-"}</td>
                 <td>{report[`PT2 ${subject}`] || "-"}</td>
+                <td>{report[`HY ${subject}`] || "-"}</td>
                 <td>{report[`PT3 ${subject}`] || "-"}</td>
                 <td>{report[`PT4 ${subject}`] || "-"}</td>
                 <td>{report[`ANNUAL ${subject}`] || "-"}</td>
@@ -120,15 +118,20 @@ const ReportCard = () => {
               </tr>
             ))}
           </tbody>
-          <p>Remarks: </p>
-          <p>Class Teacher:____________________ Exam Incharge:____________________ Principal:____________________</p>
-          <p>Parent's Signature:____________________ </p>
         </table>
-      </div>
 
+        <div className="signature-section">
+          <p>Remarks: ________________________</p>
+          <div className="signatures">
+            <p>Class Teacher: ______________</p>
+            <p>Exam Incharge: ______________</p>
+            <p>Principal: ______________</p>
+          </div>
+          <p className="parent-signature">Parent's Signature: ______________</p>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default ReportCard;
-
