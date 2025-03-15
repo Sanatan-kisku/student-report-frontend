@@ -169,15 +169,11 @@ const ReportCard = () => {
           <table className="signature">
             <tr>
               <td><b>CLASS TEACHER</b></td>
-              <td></td>
               <td><b>EXAM INCHARGE</b></td>
-              <td></td>
-              <td className="principal"><b>PRINCIPAL</b></td>
-              <td></td>
+              <td><b>PRINCIPAL</b></td>
             </tr>
             <tr>
               <td><b>PARENT'S SIGNATURE</b></td>
-              <td colSpan="5"></td>
             </tr>
           </table>
         </div>
