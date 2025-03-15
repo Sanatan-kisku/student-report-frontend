@@ -59,7 +59,7 @@ const ReportCard = () => {
       <div className="report-card">
         <div className="header-section">
           <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
-          <div className="school-info box center">
+          <div className="school-info center">
             <h2>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</h2>
             <h3>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108  sorada@oav.edu.in</h3>
             <h4>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</h4>
