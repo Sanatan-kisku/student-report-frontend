@@ -62,8 +62,8 @@ const ReportCard = () => {
         </div>
         <h3>Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501 </h3>
         <h2>PROGRESS REPORT CARD 2024-25</h2>
-        <p><strong>Name:</strong> {studentInfo.name}</p>
-        <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
+        <p style="text-align: center; font-weight: bold; font-size: 1.2em;"><strong>Name:</strong> {studentInfo.name}</p>
+        <p style="text-align: center; font-weight: bold; font-size: 1.2em;"><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
 
         <h3 className="table-heading">SCHOLASTIC DETAILS</h3>
         <table>
@@ -71,7 +71,7 @@ const ReportCard = () => {
             <tr>
               <th rowSpan="2">SL No</th>
               <th rowSpan="2">SUBJECT</th>
-              <th colSpan="6">Marks Secured</th>
+              <th colSpan="6">MARKS SECURED</th>
             </tr>
             <tr>
               <th>PT1</th>
