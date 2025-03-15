@@ -70,7 +70,7 @@ const ReportCard = () => {
         <p><strong>Name:</strong> {studentInfo.name}</p>
         <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
 
-        <h2>SCHOLASTIC DETAILS</h2>
+        <h3>SCHOLASTIC DETAILS</h3>
         <table>
           <thead>
             <tr>

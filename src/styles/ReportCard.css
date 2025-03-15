@@ -1,3 +1,20 @@
+.header-section {
+  display: flex;
+}
+
+.header-image {
+  height: 130px;
+  flex: 1;
+}
+
+.school-info {
+  flex: 1;
+}
+
+h3 {
+  color: #007bff;
+}
+
 .report-card {
   width: 80%;
   margin: 20px auto;
