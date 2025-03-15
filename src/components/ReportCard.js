@@ -1,11 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import "../styles/ReportCard.css"; // Ensure correct styling
 
 const ReportCard = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const report = location.state?.report || null;
 
   if (!report) {
@@ -29,30 +30,13 @@ const ReportCard = () => {
       return acc;
     }, []);
 
-  const totalMarks = {
-    PT1: report["PT1 TOTAL MARK"] || "-",
-    PT2: report["PT2 TOTAL MARK"] || "-",
-    HY: report["HY TOTAL MARK"] || "-",
-    PT3: report["PT3 TOTAL MARK"] || "-",
-    PT4: report["PT4 TOTAL MARK"] || "-",
-    Annual: report["ANNUAL TOTAL MARK"] || "-",
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+    doc.text("Student Report Card", 20, 10);
+    doc.text(`Name: ${studentInfo.name}`, 20, 20);
+    doc.text(`Class: ${studentInfo.class} Section: ${studentInfo.section} Roll No: ${studentInfo.rollNumber}`, 20, 30);
+    doc.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
   };
-
-  const totalPercentage = {
-    PT1: report["PT1 %age"] || "-",
-    PT2: report["PT2 %age"] || "-",
-    HY: report["HY %age"] || "-",
-    PT3: report["PT3 %age"] || "-",
-    PT4: report["PT4 %age"] || "-",
-    Annual: report["ANNUAL %age"] || "-",
-  };
-
-  const coScholastic = [
-    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
-    { id: 2, activity: "Art", grade: report["am"] || "-" },
-    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
-    { id: 4, activity: "Music", grade: report["music"] || "-" },
-  ];
 
   return (
     <div className="report-container">
@@ -112,11 +96,11 @@ const ReportCard = () => {
             </tr>
           </thead>
           <tbody>
-            {coScholastic.map((activity) => (
-              <tr key={activity.id}>
-                <td>{activity.id}</td>
-                <td>{activity.activity}</td>
-                <td>{activity.grade}</td>
+            {subjects.map((subject, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{subject}</td>
+                <td>{report[subject] || "-"}</td>
               </tr>
             ))}
           </tbody>
@@ -130,6 +114,11 @@ const ReportCard = () => {
             <p>Principal: ______________</p>
           </div>
           <p className="parent-signature">Parent's Signature: ______________</p>
+        </div>
+
+        <div className="download-btn">
+          <button onClick={handleDownloadPDF}>Download PDF</button>
+          <button onClick={() => navigate("/")}>Return Home</button>
         </div>
       </div>
     </div>
