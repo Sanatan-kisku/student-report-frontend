@@ -102,7 +102,7 @@ const ReportCard = () => {
             {subjects.map((subject, index) => (
               <tr key={subject}>
                 <td>{index + 1}</td>
-                <td style="text-align: left;">{subject}</td>
+                <td>{subject}</td>
                 <td>{report[`PT1 ${subject}`] || "-"}</td>
                 <td>{report[`PT2 ${subject}`] || "-"}</td>
                 <td>{report[`HY ${subject}`] || "-"}</td>
