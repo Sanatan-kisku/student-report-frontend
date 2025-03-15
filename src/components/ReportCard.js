@@ -30,6 +30,13 @@ const ReportCard = () => {
       return acc;
     }, []);
 
+  const coScholastic = [
+    { id: 1, activity: "Health and Physical Education", grade: report["pe"] || "-" },
+    { id: 2, activity: "Art", grade: report["am"] || "-" },
+    { id: 3, activity: "Work Education", grade: report["we"] || "-" },
+    { id: 4, activity: "Music", grade: report["music"] || "-" },
+  ];
+
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
     doc.text("Student Report Card", 20, 10);
@@ -96,11 +103,11 @@ const ReportCard = () => {
             </tr>
           </thead>
           <tbody>
-            {subjects.map((subject, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{subject}</td>
-                <td>{report[subject] || "-"}</td>
+            {coScholastic.map((activity) => (
+              <tr key={activity.id}>
+                <td>{activity.id}</td>
+                <td>{activity.activity}</td>
+                <td>{activity.grade}</td>
               </tr>
             ))}
           </tbody>
