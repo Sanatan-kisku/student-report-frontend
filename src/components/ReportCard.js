@@ -18,9 +18,9 @@ const ReportCard = () => {
     name: report["NAME OF THE STUDENT"],
     rollNumber: report["Roll No."],
     section: report["Section"],
-    class: report["class"],
-    rank: report["rank"],
-    result: report["result"],
+    class: report["Class"],
+    rank: report["Rank"],
+    result: report["Result"],
   };
 
   const subjects = Object.keys(report)
@@ -32,10 +32,10 @@ const ReportCard = () => {
     }, []);
 
   const coScholastic = [
-    { id: 1, activity: "HEALTH AND PHYSICAL EDUCATION", grade: report["pe"] || "-" },
-    { id: 2, activity: "ART", grade: report["am"] || "-" },
-    { id: 3, activity: "WORK EDUCATION", grade: report["pe"] || "-" },
-    { id: 4, activity: "MUSIC", grade: report["am"] || "-" },
+    { id: 1, activity: "HEALTH AND PHYSICAL EDUCATION", grade: report["PE"] || "-" },
+    { id: 2, activity: "ART", grade: report["AM"] || "-" },
+    { id: 3, activity: "WORK EDUCATION", grade: report["PE"] || "-" },
+    { id: 4, activity: "MUSIC", grade: report["AM"] || "-" },
   ];
 
   // const handleDownloadPDF = () => {
