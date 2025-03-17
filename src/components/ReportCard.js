@@ -38,12 +38,35 @@ const ReportCard = () => {
     { id: 4, activity: "MUSIC", grade: report["am"] || "-" },
   ];
 
+  // const handleDownloadPDF = () => {
+  //   const reportCardElement = document.querySelector(".report-card");
+  //   html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const pdf = new jsPDF("p", "mm", "a4");
+  //     pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+  //     pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
+  //   });
+  // };
+
   const handleDownloadPDF = () => {
     const reportCardElement = document.querySelector(".report-card");
-    html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
+
+    html2canvas(reportCardElement, {
+      scale: 3, // Increase scale for better resolution
+      windowWidth: reportCardElement.scrollWidth,
+      windowHeight: reportCardElement.scrollHeight,
+    }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
-      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+      const pdf = new jsPDF({
+        orientation: "p",
+        unit: "mm",
+        format: "a4",
+      });
+
+      const imgWidth = 210; // A4 width in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
       pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
     });
   };

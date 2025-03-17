@@ -39,13 +39,26 @@
   color:#0056b3;
 }
 
-.report-card {
+/* .report-card {
   width: 80%;
   margin: 20px auto;
   padding: 20px;
   border: 2px solid #000;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
+} */
+
+.report-card {
+  width: 100%;
+  max-width: 900px; /* Ensures it doesn't shrink */
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #000;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  overflow: hidden; /* Prevents cut-offs */
+  word-wrap: break-word;
+
 }
 
 .report-card h1, .report-card h2 {
