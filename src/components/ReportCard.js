@@ -52,21 +52,16 @@ const ReportCard = () => {
     const reportCardElement = document.querySelector(".report-card");
 
     html2canvas(reportCardElement, {
-      scale: 3, // Increase scale for better resolution
-      windowWidth: reportCardElement.scrollWidth,
-      windowHeight: reportCardElement.scrollHeight,
+      scale: 1.5, // Reduce scale to lower image size but maintain clarity
+      useCORS: true, // Fix CORS issues if images are from external URLs
     }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "p",
-        unit: "mm",
-        format: "a4",
-      });
+      const imgData = canvas.toDataURL("image/jpeg", 0.7); // Convert PNG → JPEG (smaller size)
+      const pdf = new jsPDF("p", "mm", "a4");
 
       const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
 
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
       pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
     });
   };
