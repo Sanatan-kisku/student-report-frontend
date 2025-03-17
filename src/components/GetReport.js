@@ -23,7 +23,11 @@ const GetReport = () => {
   const [_, setReport] = useState(null);
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
   const fetchReport = async () => {
+
+    setLoading(true); // Show loading
     const formattedDOB = form.dob.split("-").reverse().join(".");
     const formattedClass = classMapping[form.class];
 
@@ -41,7 +45,9 @@ const GetReport = () => {
     } catch (error) {
       alert("Student not found!");
     }
+    setLoading(false); // Hide loading
   };
+
 
   return (
     <div className="get-report-container">
@@ -80,7 +86,11 @@ const GetReport = () => {
             <input type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
           </div>
         </div>
+        <div>
+
+        </div>
         <button className="get-report-btn" onClick={fetchReport}>Get Report</button>
+        {loading && <p>Loading Report...</p>}
       </div>
     </div>
   );
