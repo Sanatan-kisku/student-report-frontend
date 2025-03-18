@@ -2,14 +2,15 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import Confetti from "react-confetti";
 import "jspdf-autotable";
 import "../styles/ReportCard.css"; // Ensure correct styling
-import Confetti from "react-confetti";
 
 const ReportCard = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const report = location.state?.report || null;
+  const [showConfetti, setShowConfetti] = useState(false);
 
   if (!report) {
     return <h2>No Report Found</h2>;
