@@ -46,21 +46,25 @@ const ReportCard = () => {
   useEffect(() => {
     if (studentInfo.rank === 1) {
       setShowConfetti(true);
-      let pieces = 300;
+      setConfettiPieces(300); // Start with 300 pieces
 
+      let pieces = 300;
       const interval = setInterval(() => {
-        pieces -= 20; // Gradually reduce pieces
+        pieces -= 10; // Reduce pieces gradually for a smoother transition
         setConfettiPieces(Math.max(0, pieces));
 
         if (pieces <= 0) {
           clearInterval(interval);
-          setShowConfetti(false);
+          setTimeout(() => {
+            setShowConfetti(false); // Hide confetti after a delay for a smooth fade-out
+          }, 1000); // Wait 1 second before fully stopping
         }
-      }, 500); // Reduce every 300ms
+      }, 200); // Reduce every 200ms for a smooth fade effect
 
-      return () => clearInterval(interval); // Cleanup on unmount
+      return () => clearInterval(interval);
     }
   }, [studentInfo.rank]);
+
 
   if (!report) {
     return <h2>No Report Found</h2>;
@@ -81,33 +85,33 @@ const ReportCard = () => {
     { id: 4, activity: "MUSIC", grade: report["AM"] || "-" },
   ];
 
+  const handleDownloadPDF = () => {
+    const reportCardElement = document.querySelector(".report-card");
+    html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+      pdf.save(`${studentInfo.name}_Class${studentInfo.class}_Report_Card.pdf`);
+    });
+  };
+
   // const handleDownloadPDF = () => {
   //   const reportCardElement = document.querySelector(".report-card");
-  //   html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
-  //     const imgData = canvas.toDataURL("image/png");
+
+  //   html2canvas(reportCardElement, {
+  //     scale: 1.5, // Reduce scale to lower image size but maintain clarity
+  //     useCORS: true, // Fix CORS issues if images are from external URLs
+  //   }).then((canvas) => {
+  //     const imgData = canvas.toDataURL("image/jpeg", 0.7); // Convert PNG → JPEG (smaller size)
   //     const pdf = new jsPDF("p", "mm", "a4");
-  //     pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+
+  //     const imgWidth = 210; // A4 width in mm
+  //     const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+
+  //     pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
   //     pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
   //   });
   // };
-
-  const handleDownloadPDF = () => {
-    const reportCardElement = document.querySelector(".report-card");
-
-    html2canvas(reportCardElement, {
-      scale: 1.5, // Reduce scale to lower image size but maintain clarity
-      useCORS: true, // Fix CORS issues if images are from external URLs
-    }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg", 0.7); // Convert PNG → JPEG (smaller size)
-      const pdf = new jsPDF("p", "mm", "a4");
-
-      const imgWidth = 210; // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
-
-      pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-      pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
-    });
-  };
 
   const getRankStyle = (rank) => {
     if (rank === 1) return { fontWeight: "bold", emoji: "🏆" }; // Gold & Trophy
