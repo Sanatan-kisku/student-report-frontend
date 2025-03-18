@@ -13,12 +13,12 @@ const ReportCard = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   // 🎉 Show confetti if Rank = 1
-  useEffect(() => {
-    if (parseInt(studentInfo.rank) === 1) {  // Ensure rank is treated as a number
-      setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
-    }
-  }, [studentInfo.rank]);
+  // useEffect(() => {
+  //   if (parseInt(studentInfo.rank) === 1) {  // Ensure rank is treated as a number
+  //     setShowConfetti(true);
+  //     setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
+  //   }
+  // }, [studentInfo.rank]);
 
   if (!report) {
     return <h2>No Report Found</h2>;
@@ -29,9 +29,16 @@ const ReportCard = () => {
     rollNumber: report["Roll No."],
     section: report["Section"],
     class: report["Class"],
-    rank: report["Rank"],
+    rank: parseInt(report["Rank"]),
     result: report["Result"],
   };
+
+  useEffect(() => {
+    if (studentInfo.rank === 1) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
+    }
+  }, [studentInfo.rank]);
 
   const subjects = Object.keys(report)
     .filter((key) => (key.includes("HY ") || key.includes("PT") || key.includes("ANNUAL")) && !key.includes("TOTAL MARK") && !key.includes("%age"))
