@@ -4,6 +4,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import "jspdf-autotable";
 import "../styles/ReportCard.css"; // Ensure correct styling
+import Confetti from "react-confetti";
 
 const ReportCard = () => {
   const location = useLocation();
@@ -66,17 +67,26 @@ const ReportCard = () => {
     });
   };
 
+  // 🎉 Show confetti if Rank = 1
+  useEffect(() => {
+    if (studentInfo.rank === 1) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
+    }
+  }, [studentInfo.rank]);
+
   const getRankStyle = (rank) => {
     if (rank === 1) return { fontWeight: "bold", emoji: "🏆" }; // Gold & Trophy
     if (rank === 2) return { fontWeight: "bold", emoji: "🥈" }; // Silver & Medal
     if (rank === 3) return { fontWeight: "bold", emoji: "🥉" }; // Copper & Medal
-    return { color: "black", fontWeight: "bold", emoji: "🎖️" }; // Default for other ranks
+    return { color: "black", fontWeight: "bold", }; // Default for other ranks
   };
 
   const rankStyle = getRankStyle(studentInfo.rank);
 
   return (
     <div className="report-container">
+      {showConfetti && <Confetti numberOfPieces={500} gravity={0.2} />} {/* 🎉 Confetti effect */}
       <div className="report-card" id="reportCard">
         <div className="header-section">
           <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
