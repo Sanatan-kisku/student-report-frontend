@@ -126,6 +126,7 @@ const ReportCard = () => {
           height={window.innerHeight}
           numberOfPieces={confettiPieces} // Controlled by state
           gravity={0.3}
+          fadeOut // Enable fade out effect
         />
       )}
       <div className="report-card" id="reportCard">
