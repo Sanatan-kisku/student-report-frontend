@@ -56,7 +56,7 @@ const ReportCard = () => {
           clearInterval(interval);
           setShowConfetti(false);
         }
-      }, 300); // Reduce every 300ms
+      }, 500); // Reduce every 300ms
 
       return () => clearInterval(interval); // Cleanup on unmount
     }
