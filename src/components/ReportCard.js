@@ -67,11 +67,13 @@ const ReportCard = () => {
   };
 
   const getRankStyle = (rank) => {
-    if (rank === 1) return { color: "gold", fontWeight: "bold" };
-    if (rank === 2) return { color: "silver", fontWeight: "bold" };
-    if (rank === 3) return { color: "#b87333", fontWeight: "bold" }; // Copper color
-    return { fontWeight: "bold" }; // Default for other ranks
+    if (rank === 1) return { fontWeight: "bold", emoji: "🏆" }; // Gold & Trophy
+    if (rank === 2) return { fontWeight: "bold", emoji: "🥈" }; // Silver & Medal
+    if (rank === 3) return { fontWeight: "bold", emoji: "🥉" }; // Copper & Medal
+    return { color: "black", fontWeight: "bold", emoji: "🎖️" }; // Default for other ranks
   };
+
+  const rankStyle = getRankStyle(studentInfo.rank);
 
   return (
     <div className="report-container">
@@ -157,8 +159,10 @@ const ReportCard = () => {
             <tr>
               <td colSpan="4"><strong>RANK</strong></td>
               <td colSpan="4">
-                <h3 className={`rank-${studentInfo.rank}`}>
-                  Rank: {studentInfo.rank}
+                <h3>
+                  <span style={{ fontWeight: rankStyle.fontWeight }}>
+                    {rankStyle.emoji} {studentInfo.rank}
+                  </span>
                 </h3>
               </td>
             </tr>
