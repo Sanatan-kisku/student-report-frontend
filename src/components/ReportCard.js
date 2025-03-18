@@ -20,10 +20,6 @@ const ReportCard = () => {
   //   }
   // }, [studentInfo.rank]);
 
-  if (!report) {
-    return <h2>No Report Found</h2>;
-  }
-
   const studentInfo = {
     name: report["NAME OF THE STUDENT"],
     rollNumber: report["Roll No."],
@@ -39,6 +35,10 @@ const ReportCard = () => {
       setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
     }
   }, [studentInfo.rank]);
+
+  if (!report) {
+    return <h2>No Report Found</h2>;
+  }
 
   const subjects = Object.keys(report)
     .filter((key) => (key.includes("HY ") || key.includes("PT") || key.includes("ANNUAL")) && !key.includes("TOTAL MARK") && !key.includes("%age"))
