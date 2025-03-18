@@ -89,19 +89,20 @@ const ReportCard = () => {
     const reportCardElement = document.querySelector(".report-card");
 
     html2canvas(reportCardElement, {
-      scale: window.devicePixelRatio, // Maintain clarity
-      useCORS: true, // Fix CORS issues if images are external
+      scale: 2, // Fixed scale for better clarity & optimized size
+      useCORS: true, // Prevents cross-origin image issues
     }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg", 0.8); // Convert PNG → JPEG (smaller size, good quality)
+      const imgData = canvas.toDataURL("image/jpeg", 0.7); // Adjust quality for smaller file size
       const pdf = new jsPDF("p", "mm", "a4");
 
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Maintain aspect ratio
 
-      pdf.addImage(imgData, "JPEG", 10, 10, pdfWidth - 20, pdfHeight - 20); // Add padding to avoid cut-off
+      pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight); // No extra padding to avoid cut-off
       pdf.save(`${studentInfo.name}_Class${studentInfo.class}_Report_Card.pdf`);
     });
   };
+
 
 
   // const handleDownloadPDF = () => {
