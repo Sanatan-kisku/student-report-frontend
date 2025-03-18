@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Confetti from "react-confetti";
-import { useWindowSize } from "react-use";
+// import { useWindowSize } from "react-use";
 import "jspdf-autotable";
 import "../styles/ReportCard.css"; // Ensure correct styling
 
@@ -89,20 +89,27 @@ const ReportCard = () => {
     const reportCardElement = document.querySelector(".report-card");
 
     html2canvas(reportCardElement, {
-      scale: 2, // Fixed scale for better clarity & optimized size
-      useCORS: true, // Prevents cross-origin image issues
+      scale: 2, // Ensures high clarity
+      useCORS: true, // Prevents cross-origin issues
     }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg", 0.7); // Adjust quality for smaller file size
+      const imgData = canvas.toDataURL("image/jpeg", 0.8); // Optimized quality
       const pdf = new jsPDF("p", "mm", "a4");
 
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Maintain aspect ratio
+      const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4 width)
+      const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm (A4 height)
 
-      pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight); // No extra padding to avoid cut-off
-      pdf.save(`${studentInfo.name}_Class${studentInfo.class}_Report_Card.pdf`);
+      const imgWidth = pdfWidth - 20; // Adjust width for margins
+      const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+
+      if (imgHeight > pdfHeight - 20) {
+        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, pdfHeight - 20); // Fit into page
+      } else {
+        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
+      }
+
+      pdf.save(`${studentInfo.name.replace(/\s+/g, "_")}_Class_${studentInfo.class}_Report_Card.pdf`);
     });
   };
-
 
 
   // const handleDownloadPDF = () => {
