@@ -31,14 +31,33 @@ const ReportCard = () => {
     result: report["Result"],
   };
 
+  // useEffect(() => {
+  //   if (studentInfo.rank === 1) {
+  //     let count = 300; // Start with 300 pieces
+  //     const interval = setInterval(() => {
+  //       count -= 20; // Reduce pieces gradually
+  //       setConfettiPieces(Math.max(count, 0)); // Prevent negative values
+  //       if (count <= 0) clearInterval(interval); // Stop when count reaches 0
+  //     }, 200); // Reduce every 200ms
+  //   }
+  // }, [studentInfo.rank]);
+
   useEffect(() => {
     if (studentInfo.rank === 1) {
-      let count = 300; // Start with 300 pieces
+      setShowConfetti(true);
+      let pieces = 300;
+
       const interval = setInterval(() => {
-        count -= 20; // Reduce pieces gradually
-        setConfettiPieces(Math.max(count, 0)); // Prevent negative values
-        if (count <= 0) clearInterval(interval); // Stop when count reaches 0
-      }, 200); // Reduce every 200ms
+        pieces -= 20; // Gradually reduce pieces
+        setConfettiPieces(Math.max(0, pieces));
+
+        if (pieces <= 0) {
+          clearInterval(interval);
+          setShowConfetti(false);
+        }
+      }, 300); // Reduce every 300ms
+
+      return () => clearInterval(interval); // Cleanup on unmount
     }
   }, [studentInfo.rank]);
 
@@ -100,8 +119,13 @@ const ReportCard = () => {
 
   return (
     <div className="report-container">
-      {studentInfo.rank === 1 && confettiPieces > 0 && (
-        <Confetti width={width} height={height} numberOfPieces={confettiPieces} gravity={0.3} />
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={confettiPieces} // Controlled by state
+          gravity={0.3}
+        />
       )}
       <div className="report-card" id="reportCard">
         <div className="header-section">
