@@ -126,3 +126,18 @@
 .download-btn button:hover {
   background-color: #0056b3;
 }
+
+.rank-1 {
+  color: gold;
+  font-weight: bold;
+}
+
+.rank-2 {
+  color: silver;
+  font-weight: bold;
+}
+
+.rank-3 {
+  color: #b87333; /* Copper */
+  font-weight: bold;
+}

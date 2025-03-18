@@ -66,6 +66,13 @@ const ReportCard = () => {
     });
   };
 
+  const getRankStyle = (rank) => {
+    if (rank === 1) return { color: "gold", fontWeight: "bold" };
+    if (rank === 2) return { color: "silver", fontWeight: "bold" };
+    if (rank === 3) return { color: "#b87333", fontWeight: "bold" }; // Copper color
+    return { fontWeight: "bold" }; // Default for other ranks
+  };
+
   return (
     <div className="report-container">
       <div className="report-card" id="reportCard">
@@ -149,7 +156,11 @@ const ReportCard = () => {
             </tr>
             <tr>
               <td colSpan="4"><strong>RANK</strong></td>
-              <td colSpan="4">{studentInfo.rank}</td>
+              <td colSpan="4">
+                <h3 className={`rank-${studentInfo.rank}`}>
+                  Rank: {studentInfo.rank}
+                </h3>
+              </td>
             </tr>
             <tr>
               <td colSpan="4"><strong>RESULT</strong></td>
