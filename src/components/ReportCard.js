@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 import "jspdf-autotable";
 import "../styles/ReportCard.css"; // Ensure correct styling
 
@@ -10,6 +11,7 @@ const ReportCard = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const report = location.state?.report || null;
+  const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
 
   // 🎉 Show confetti if Rank = 1
@@ -31,8 +33,12 @@ const ReportCard = () => {
 
   useEffect(() => {
     if (studentInfo.rank === 1) {
-      setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
+      let count = 300; // Start with 300 pieces
+      const interval = setInterval(() => {
+        count -= 20; // Reduce pieces gradually
+        setConfettiPieces(Math.max(count, 0)); // Prevent negative values
+        if (count <= 0) clearInterval(interval); // Stop when count reaches 0
+      }, 200); // Reduce every 200ms
     }
   }, [studentInfo.rank]);
 
@@ -94,13 +100,8 @@ const ReportCard = () => {
 
   return (
     <div className="report-container">
-      {showConfetti && (
-        <Confetti
-          width={window.innerWidth} // Make sure it covers the screen width
-          height={window.innerHeight} // Full-screen effect
-          numberOfPieces={300} // More particles
-          gravity={0.3} // Slower falling effect
-        />
+      {studentInfo.rank === 1 && confettiPieces > 0 && (
+        <Confetti width={width} height={height} numberOfPieces={confettiPieces} gravity={0.3} />
       )}
       <div className="report-card" id="reportCard">
         <div className="header-section">
