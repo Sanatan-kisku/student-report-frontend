@@ -50,7 +50,7 @@ const ReportCard = () => {
 
       let pieces = 300;
       const interval = setInterval(() => {
-        pieces -= 10; // Reduce pieces gradually for a smoother transition
+        pieces -= 20; // Reduce pieces gradually for a smoother transition
         setConfettiPieces(Math.max(0, pieces));
 
         if (pieces <= 0) {
@@ -87,13 +87,22 @@ const ReportCard = () => {
 
   const handleDownloadPDF = () => {
     const reportCardElement = document.querySelector(".report-card");
-    html2canvas(reportCardElement, { scale: 2 }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
+
+    html2canvas(reportCardElement, {
+      scale: window.devicePixelRatio, // Maintain clarity
+      useCORS: true, // Fix CORS issues if images are external
+    }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/jpeg", 0.8); // Convert PNG → JPEG (smaller size, good quality)
       const pdf = new jsPDF("p", "mm", "a4");
-      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Maintain aspect ratio
+
+      pdf.addImage(imgData, "JPEG", 10, 10, pdfWidth - 20, pdfHeight - 20); // Add padding to avoid cut-off
       pdf.save(`${studentInfo.name}_Class${studentInfo.class}_Report_Card.pdf`);
     });
   };
+
 
   // const handleDownloadPDF = () => {
   //   const reportCardElement = document.querySelector(".report-card");
