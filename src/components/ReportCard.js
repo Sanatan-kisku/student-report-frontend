@@ -12,6 +12,14 @@ const ReportCard = () => {
   const report = location.state?.report || null;
   const [showConfetti, setShowConfetti] = useState(false);
 
+  // 🎉 Show confetti if Rank = 1
+  useEffect(() => {
+    if (studentInfo.rank === 1) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
+    }
+  }, [studentInfo.rank]);
+
   if (!report) {
     return <h2>No Report Found</h2>;
   }
@@ -67,14 +75,6 @@ const ReportCard = () => {
       pdf.save(`${studentInfo.name}_Class${studentInfo.class}.pdf`);
     });
   };
-
-  // 🎉 Show confetti if Rank = 1
-  useEffect(() => {
-    if (studentInfo.rank === 1) {
-      setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
-    }
-  }, [studentInfo.rank]);
 
   const getRankStyle = (rank) => {
     if (rank === 1) return { fontWeight: "bold", emoji: "🏆" }; // Gold & Trophy
