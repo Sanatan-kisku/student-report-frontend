@@ -14,7 +14,7 @@ const ReportCard = () => {
 
   // 🎉 Show confetti if Rank = 1
   useEffect(() => {
-    if (studentInfo.rank === 1) {
+    if (parseInt(studentInfo.rank) === 1) {  // Ensure rank is treated as a number
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 5000); // Hide after 5s
     }
@@ -87,7 +87,14 @@ const ReportCard = () => {
 
   return (
     <div className="report-container">
-      {showConfetti && <Confetti numberOfPieces={500} gravity={0.2} />} {/* 🎉 Confetti effect */}
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth} // Make sure it covers the screen width
+          height={window.innerHeight} // Full-screen effect
+          numberOfPieces={300} // More particles
+          gravity={0.3} // Slower falling effect
+        />
+      )}
       <div className="report-card" id="reportCard">
         <div className="header-section">
           <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
