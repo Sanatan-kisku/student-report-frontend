@@ -11,7 +11,8 @@ const ReportCard = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const report = location.state?.report || null;
-  const { width, height } = useWindowSize();
+  // const { width, height } = useWindowSize();
+  const [showConfetti, setShowConfetti] = useState(false);
   const [confettiPieces, setConfettiPieces] = useState(300);
 
   // 🎉 Show confetti if Rank = 1
