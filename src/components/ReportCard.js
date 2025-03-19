@@ -50,7 +50,7 @@ const ReportCard = () => {
 
       let pieces = 300;
       const interval = setInterval(() => {
-        pieces -= 20; // Reduce pieces gradually for a smoother transition
+        pieces -= 10; // Reduce pieces gradually for a smoother transition
         setConfettiPieces(Math.max(0, pieces));
 
         if (pieces <= 0) {
