@@ -186,7 +186,7 @@ const ReportCard = () => {
             <td><b>SEC</b></td>
             <td>{studentInfo.section}</td>
             <td><b>ROLL NO</b></td>
-            <td colSpan={isMobile ? 3 : 2}>{studentInfo.rollNumber}</td>
+            <td colSpan={isMobile ? 3 : 3}>{studentInfo.rollNumber}</td>
           </tr>
         </table>
 
