@@ -86,7 +86,7 @@ const ReportCard = () => {
     const reportCardElement = document.querySelector(".report-card");
 
     html2canvas(reportCardElement, {
-      scale: 2, // Ensures high clarity
+      scale: window.devicePixelRatio, // Ensures high clarity
       useCORS: true, // Prevents cross-origin issues
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/jpeg", 0.8); // Optimized quality
@@ -98,11 +98,12 @@ const ReportCard = () => {
       const imgWidth = pdfWidth - 20; // Adjust width for margins
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
 
-      if (imgHeight > pdfHeight - 20) {
-        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, pdfHeight - 20); // Fit into page
-      } else {
-        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
-      }
+      // if (imgHeight > pdfHeight - 20) {
+      //   pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, pdfHeight - 20); // Fit into page
+      // } else {
+      //   pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
+      // }
+      pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, Math.min(imgHeight, pdfHeight - 20)); // Fit to page
 
       pdf.save(`${studentInfo.name} Class${studentInfo.class} Report Card.pdf`);
     });

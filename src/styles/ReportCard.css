@@ -75,6 +75,7 @@
   word-wrap: break-word; */
   position: relative; /* Ensure watermark stays behind content */
   width: 80%;
+  max-width: 900px;  /* Limit maximum width */
   margin: 20px auto;
   padding: 20px;
   border: 2px solid #000;
@@ -95,11 +96,13 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  table-layout: fixed; /* Prevent table from expanding too much */
 }
 
 .report-card th, .report-card td {
   border: 1px solid #000;
   padding: 10px;
+  word-wrap: break-word; /* Prevent text from overflowing */
   /* text-align: center; */
 }
 
@@ -146,4 +149,39 @@
 
 .download-btn button:hover {
   background-color: #0056b3;
+}
+
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 768px) {
+  .report-card {
+    width: 95%; /* Increase width on smaller screens */
+    padding: 10px;
+  }
+
+  .report-card th, .report-card td {
+    padding: 6px; /* Reduce padding for better fit */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .header-section {
+    flex-direction: column; /* Stack logos and text */
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-image {
+    width: 100px; /* Reduce logo size */
+    height: 100px;
+  }
+
+  .watermark-pdf {
+    width: 400px; /* Reduce size for smaller screens */
+  }
+
+  .download-btn button {
+    width: 100%; /* Full-width buttons for easy tapping */
+    font-size: 14px;
+    padding: 10px;
+  }
 }
