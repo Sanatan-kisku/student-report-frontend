@@ -163,7 +163,7 @@
 
   .report-card th, .report-card td {
     padding: 6px;
-    font-size: 12px; /* Reduce font size */
+    font-size: 7px; /* Reduce font size */
   }
 
   .header-section {
@@ -172,8 +172,8 @@
   }
 
   .header-image {
-    width: 80px; /* Reduce logo size */
-    height: 80px;
+    width: 60px; /* Reduce logo size */
+    height: 60px;
   }
 
   .school-info h2 {
@@ -188,6 +188,14 @@
 
   .school-info p {
     font-size: 5px;
+  }
+
+  h3 {
+    font-size: 6px;
+  }
+
+  h2 {
+    font-size: 8px;
   }
 
   /* Ensure watermark fits mobile screens */
