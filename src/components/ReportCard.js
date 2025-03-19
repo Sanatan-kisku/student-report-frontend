@@ -149,6 +149,7 @@ const ReportCard = () => {
           fadeOut // Gradual fade-out effect
         />
       )}
+      <img src="../../public/OavLogo.jpeg" alt="Watermark" className="watermark" />
       <div className="report-card" id="reportCard">
         <div className="header-section">
           <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
