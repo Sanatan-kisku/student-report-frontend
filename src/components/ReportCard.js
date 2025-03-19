@@ -98,12 +98,11 @@ const ReportCard = () => {
       const imgWidth = pdfWidth - 20; // Adjust width for margins
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
 
-      // if (imgHeight > pdfHeight - 20) {
-      //   pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, pdfHeight - 20); // Fit into page
-      // } else {
-      //   pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
-      // }
-      pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, Math.min(imgHeight, pdfHeight - 20)); // Fit to page
+      if (imgHeight > pdfHeight - 20) {
+        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, pdfHeight - 20); // Fit into page
+      } else {
+        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
+      }
 
       pdf.save(`${studentInfo.name} Class${studentInfo.class} Report Card.pdf`);
     });

@@ -53,7 +53,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
+  width: 600px;
   opacity: 0.1; /* Low opacity to act as watermark */
   z-index: 0; /* Keep it behind text */
 }
@@ -155,33 +155,42 @@
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
   .report-card {
-    width: 95%; /* Increase width on smaller screens */
+    width: 95%; /* Ensure it fits on mobile */
     padding: 10px;
+    margin: auto;
   }
 
   .report-card th, .report-card td {
-    padding: 6px; /* Reduce padding for better fit */
-    font-size: 14px; /* Reduce font size */
+    padding: 6px;
+    font-size: 12px; /* Reduce font size */
   }
 
   .header-section {
-    flex-direction: column; /* Stack logos and text */
-    align-items: center;
+    flex-direction: column;
     text-align: center;
   }
 
   .header-image {
-    width: 100px; /* Reduce logo size */
-    height: 100px;
+    width: 80px; /* Reduce logo size */
+    height: 80px;
   }
 
+  .school-info h2 {
+    font-size: 18px;
+  }
+
+  .school-info h3, .school-info p {
+    font-size: 14px;
+  }
+
+  /* Ensure watermark fits mobile screens */
   .watermark-pdf {
-    width: 400px; /* Reduce size for smaller screens */
+    width: 300px;
   }
 
   .download-btn button {
-    width: 100%; /* Full-width buttons for easy tapping */
+    width: 100%;
     font-size: 14px;
-    padding: 10px;
+    padding: 8px;
   }
 }
