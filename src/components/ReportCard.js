@@ -59,7 +59,7 @@ const ReportCard = () => {
             setShowConfetti(false); // Hide confetti after a delay for a smooth fade-out
           }, 1000); // Wait 1 second before fully stopping
         }
-      }, 200); // Reduce every 200ms for a smooth fade effect
+      }, 400); // Reduce every 200ms for a smooth fade effect
 
       return () => clearInterval(interval);
     }
@@ -107,7 +107,7 @@ const ReportCard = () => {
         pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
       }
 
-      pdf.save(`${studentInfo.name}_Class_${studentInfo.class}_Report_Card.pdf`);
+      pdf.save(`${studentInfo.name} Class${studentInfo.class} Report Card.pdf`);
     });
   };
 
@@ -267,11 +267,11 @@ const ReportCard = () => {
           </tbody>
         </table>
 
-        <table className="remarks-table">
+        <table className="remark-table">
           <tbody>
             <tr>
               <td><strong>REMARK</strong></td>
-              <td colSpan="5"> </td>
+              <td colSpan="5"></td>
             </tr>
           </tbody>
         </table>
