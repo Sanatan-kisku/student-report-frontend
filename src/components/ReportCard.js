@@ -269,7 +269,7 @@ const ReportCard = () => {
         <table className="remark-table">
           <tbody>
             <tr>
-              <td style={{ textAlign: "left" }}><strong>REMARK</strong></td>
+              <td style={{ textAlign: "left" }}><strong>REMARK:</strong></td>
             </tr>
           </tbody>
         </table>
