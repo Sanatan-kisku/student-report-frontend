@@ -11,6 +11,7 @@ const ReportCard = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const report = location.state?.report || null;
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   // const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiPieces, setConfettiPieces] = useState(600);
@@ -42,6 +43,13 @@ const ReportCard = () => {
   //     }, 200); // Reduce every 200ms
   //   }
   // }, [studentInfo.rank]);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (studentInfo.rank === 1) {
@@ -178,7 +186,7 @@ const ReportCard = () => {
             <td><b>SEC</b></td>
             <td>{studentInfo.section}</td>
             <td><b>ROLL NO</b></td>
-            <td colspan="2">{studentInfo.rollNumber}</td>
+            <td colSpan={isMobile ? 3 : 2}>{studentInfo.rollNumber}</td>
           </tr>
         </table>
 

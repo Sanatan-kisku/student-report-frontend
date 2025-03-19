@@ -128,7 +128,7 @@
 
 .signature-section th, .signature-section td {
   border: none;
-  text-align: left;
+  text-align: center;
   padding: 30px 0;
   width: 50%; /* Equal column width */
 }
@@ -162,8 +162,12 @@
 
 
   .report-card th, .report-card td {
-    padding: 6px;
-    font-size: 7px; /* Reduce font size */
+    padding: 3px;
+    font-size: 5px; /* Reduce font size */
+  }
+
+  .report-card h3{
+    margin: 5px;
   }
 
   .header-section {
@@ -184,6 +188,7 @@
 
   .school-info h3{
     font-size: 8px;
+    margin-top: 16px;
   }
 
   .school-info p {
@@ -201,6 +206,10 @@
   /* Ensure watermark fits mobile screens */
   .watermark-pdf {
     width: 300px;
+  }
+
+  .signature th, .signature td {
+    text-align: center;
   }
 
   .download-btn button {
