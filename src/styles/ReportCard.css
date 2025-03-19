@@ -51,29 +51,27 @@
 .report-card {
   /* position: relative;
   width: 100%;
-  max-width: 900px; /* Ensures it doesn't shrink */
-  /* margin: auto;
+  max-width: 900px;
+   margin: auto;
+  padding: 20px;
+  border: 2px solid #000;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  background: url("../../public/OavLogo.jpeg") no-repeat center center;
+  background-size: 40%;
+  opacity: 0.2;
+  overflow: hidden;  
+  word-wrap: break-word; */
+  position: relative; /* Ensure watermark stays behind content */
+  width: 80%;
+  margin: 20px auto;
   padding: 20px;
   border: 2px solid #000;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
   background: url("../../public/OavLogo.jpeg") no-repeat center center;
   background-size: 40%; /* Adjust size */
-  /* opacity: 0.2;  */
-  /* overflow: hidden;  
-  word-wrap: break-word;  */
-  .report-card {
-    position: relative; /* Ensure watermark stays behind content */
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
-    border: 2px solid #000;
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    background: url("../../public/OavLogo.jpeg") no-repeat center center;
-    background-size: 40%; /* Adjust size */
-    opacity: 0.2; /* Make it semi-transparent */
-  }
+  opacity: 0.2; /* Make it semi-transparent */
 }
 
 .report-card h1, .report-card h2 {
