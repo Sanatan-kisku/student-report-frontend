@@ -94,7 +94,7 @@
 
 .report-card table {
   width: 100%;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   margin-top: 20px;
   /* table-layout: fixed;  */
 }
@@ -168,6 +168,10 @@
 
   .report-card h3{
     margin: 5px;
+  }
+
+  .report-card table {
+    margin-top: 5px;
   }
 
   .header-section {
