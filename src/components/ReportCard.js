@@ -271,7 +271,7 @@ const ReportCard = () => {
           <tbody>
             <tr>
               <td colSpan="1"><strong>REMARK</strong></td>
-              <td colSpan="5"></td>
+              <td colSpan="5"> hi </td>
             </tr>
           </tbody>
         </table>
