@@ -46,7 +46,7 @@ const ReportCard = () => {
   useEffect(() => {
     if (studentInfo.rank === 1) {
       setShowConfetti(true);
-      setConfettiPieces(300); // Start with 300 pieces
+      setConfettiPieces(500); // Start with 300 pieces
 
       let pieces = 300;
       const interval = setInterval(() => {
@@ -270,7 +270,7 @@ const ReportCard = () => {
         <table className="remark-table">
           <tbody>
             <tr>
-              <td><strong>REMARK</strong></td>
+              <td colSpan="1"><strong>REMARK</strong></td>
               <td colSpan="5"></td>
             </tr>
           </tbody>
