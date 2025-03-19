@@ -94,10 +94,12 @@ const ReportCard = () => {
     const reportCardElement = document.querySelector(".report-card");
 
     html2canvas(reportCardElement, {
-      scale: window.devicePixelRatio, // Ensures high clarity
+      scale: 3, // Ensures high clarity
       useCORS: true, // Prevents cross-origin issues
+      dpi: 300, // Ensure high DPI for sharper text
+      letterRendering: true,
     }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg", 0.8); // Optimized quality
+      const imgData = canvas.toDataURL("image/jpeg", 0.9); // Optimized quality
       const pdf = new jsPDF("p", "mm", "a4");
 
       const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4 width)
