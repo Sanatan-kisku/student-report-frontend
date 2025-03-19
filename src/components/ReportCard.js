@@ -98,6 +98,8 @@ const ReportCard = () => {
       useCORS: true, // Prevents cross-origin issues
       dpi: 300, // Ensure high DPI for sharper text
       letterRendering: true,
+      scrollX: 0, // Prevents horizontal scroll issues
+      scrollY: 0, // Prevents vertical scroll issues
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/jpeg", 0.9); // Optimized quality
       const pdf = new jsPDF("p", "mm", "a4");
@@ -105,7 +107,7 @@ const ReportCard = () => {
       const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4 width)
       const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm (A4 height)
 
-      const imgWidth = pdfWidth - 20; // Adjust width for margins
+      const imgWidth = pdfWidth - 15; // Adjust width for margins
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
 
       if (imgHeight > pdfHeight - 20) {
