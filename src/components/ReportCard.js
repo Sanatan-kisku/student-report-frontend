@@ -13,7 +13,7 @@ const ReportCard = () => {
   const report = location.state?.report || null;
   // const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
-  const [confettiPieces, setConfettiPieces] = useState(300);
+  const [confettiPieces, setConfettiPieces] = useState(600);
 
   // 🎉 Show confetti if Rank = 1
   // useEffect(() => {
@@ -46,25 +46,22 @@ const ReportCard = () => {
   useEffect(() => {
     if (studentInfo.rank === 1) {
       setShowConfetti(true);
-      setConfettiPieces(500); // Start with 300 pieces
+      setConfettiPieces(600); // Start with more pieces
 
-      let pieces = 300;
+      let pieces = 600;
       const interval = setInterval(() => {
-        pieces -= 10; // Reduce pieces gradually for a smoother transition
+        pieces -= 15; // Reduce gradually for smoother fade-out
         setConfettiPieces(Math.max(0, pieces));
 
         if (pieces <= 0) {
           clearInterval(interval);
-          setTimeout(() => {
-            setShowConfetti(false); // Hide confetti after a delay for a smooth fade-out
-          }, 1000); // Wait 1 second before fully stopping
+          setTimeout(() => setShowConfetti(false), 1500); // Wait 1.5 sec before stopping
         }
-      }, 400); // Reduce every 200ms for a smooth fade effect
+      }, 200); // Smooth decrease every 200ms
 
       return () => clearInterval(interval);
     }
   }, [studentInfo.rank]);
-
 
   if (!report) {
     return <h2>No Report Found</h2>;
@@ -145,9 +142,11 @@ const ReportCard = () => {
         <Confetti
           width={window.innerWidth}
           height={window.innerHeight}
-          numberOfPieces={confettiPieces} // Controlled by state
-          gravity={0.3}
-          fadeOut // Enable fade out effect
+          numberOfPieces={confettiPieces} // Smoothly reduces over time
+          gravity={0.2} // Slower falling
+          wind={0.02} // Adds slight drifting effect
+          tweenDuration={3000} // Smooth transition
+          fadeOut // Gradual fade-out effect
         />
       )}
       <div className="report-card" id="reportCard">
@@ -270,7 +269,7 @@ const ReportCard = () => {
         <table className="remark-table">
           <tbody>
             <tr>
-              <td><strong>REMARK</strong></td>
+              <td style={{ textAlign: "left" }}><strong>REMARK</strong></td>
             </tr>
           </tbody>
         </table>
