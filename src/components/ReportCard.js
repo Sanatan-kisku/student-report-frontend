@@ -149,7 +149,7 @@ const ReportCard = () => {
           fadeOut // Gradual fade-out effect
         />
       )}
-      <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" />
+      {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
       <div className="report-card" id="reportCard">
         <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
         <div className="header-section">
