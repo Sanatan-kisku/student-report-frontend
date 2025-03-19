@@ -107,7 +107,7 @@ const ReportCard = () => {
         pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
       }
 
-      pdf.save(`${studentInfo.name.replace(/\s+/g, "_")}_Class_${studentInfo.class}_Report_Card.pdf`);
+      pdf.save(`${studentInfo.name}_Class_${studentInfo.class}_Report_Card.pdf`);
     });
   };
 
@@ -130,14 +130,14 @@ const ReportCard = () => {
   //   });
   // };
 
-  const getRankStyle = (rank) => {
-    if (rank === 1) return { fontWeight: "bold", emoji: "🏆" }; // Gold & Trophy
-    if (rank === 2) return { fontWeight: "bold", emoji: "🥈" }; // Silver & Medal
-    if (rank === 3) return { fontWeight: "bold", emoji: "🥉" }; // Copper & Medal
-    return { color: "black", fontWeight: "bold", }; // Default for other ranks
-  };
+  // const getRankStyle = (rank) => {
+  //   if (rank === 1) return { fontWeight: "bold", emoji: "🏆" }; // Gold & Trophy
+  //   if (rank === 2) return { fontWeight: "bold", emoji: "🥈" }; // Silver & Medal
+  //   if (rank === 3) return { fontWeight: "bold", emoji: "🥉" }; // Copper & Medal
+  //   return { color: "black", fontWeight: "bold", }; // Default for other ranks
+  // };
 
-  const rankStyle = getRankStyle(studentInfo.rank);
+  // const rankStyle = getRankStyle(studentInfo.rank);
 
   return (
     <div className="report-container">
@@ -233,9 +233,7 @@ const ReportCard = () => {
               <td colSpan="4"><strong>RANK</strong></td>
               <td colSpan="4">
                 <h3>
-                  <span style={{ fontWeight: rankStyle.fontWeight }}>
-                    {rankStyle.emoji} {studentInfo.rank}
-                  </span>
+                  {studentInfo.rank}
                 </h3>
               </td>
             </tr>
@@ -273,7 +271,7 @@ const ReportCard = () => {
           <tbody>
             <tr>
               <td><strong>REMARK</strong></td>
-              <td></td>
+              <td colSpan="5"> </td>
             </tr>
           </tbody>
         </table>
