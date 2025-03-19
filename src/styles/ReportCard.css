@@ -49,15 +49,26 @@
 } */
 
 .watermark {
-  position: fixed;
+  position: fixed; /* Stays in place when scrolling */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the watermark */
+  width: 300px; /* Adjust size */
+  opacity: 0.1; /* Make it semi-transparent */
+  z-index: -1; /* Ensure it's behind other content */
+  pointer-events: none; /* Prevent user interactions */
+}
+
+.watermark-pdf {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.1; /* Adjust transparency */
-  z-index: -1; /* Ensures it's behind everything */
-  width: 70%; /* Adjust size */
-  pointer-events: none; /* Prevent interaction */
+  width: 300px;
+  opacity: 0.1; /* Low opacity to act as watermark */
+  z-index: 0; /* Keep it behind text */
 }
+
 
 .report-card {
   /* position: relative;

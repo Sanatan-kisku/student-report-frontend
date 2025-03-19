@@ -151,6 +151,7 @@ const ReportCard = () => {
       )}
       <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" />
       <div className="report-card" id="reportCard">
+        <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
         <div className="header-section">
           <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
           <div className="school-info center">
