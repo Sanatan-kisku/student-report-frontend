@@ -137,7 +137,7 @@
   text-align: left;
 }
 
-.download-btn button {
+/* .download-btn button {
   margin: 20px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -148,6 +148,32 @@
 }
 
 .download-btn button:hover {
+  background-color: #0056b3;
+} */
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.floating-buttons button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.floating-buttons button:hover {
   background-color: #0056b3;
 }
 

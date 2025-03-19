@@ -301,7 +301,7 @@ const ReportCard = () => {
           </table>
         </div>
       </div>
-      <div className="download-btn" style={{ textAlign: "center", marginTop: "20px" }}>
+      <div className="download-btn floating-buttons" style={{ textAlign: "center", marginTop: "20px" }}>
         <button onClick={handleDownloadPDF}>Download PDF</button>
         <button onClick={() => navigate("/")}>Return Home</button>
       </div>
