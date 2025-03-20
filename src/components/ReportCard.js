@@ -28,7 +28,7 @@ const ReportCard = () => {
     name: report["NAME OF THE STUDENT"],
     rollNumber: report["ROLL NO"],
     section: report["SECTION"],
-    class: report["ClASS"],
+    class: report["CLASS"],
     rank: parseInt(report["RANK"]),
     result: report["RESULT"],
   };
