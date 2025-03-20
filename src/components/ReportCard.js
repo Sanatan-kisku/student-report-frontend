@@ -26,11 +26,11 @@ const ReportCard = () => {
 
   const studentInfo = {
     name: report["NAME OF THE STUDENT"],
-    rollNumber: report["ROLL NO"],
-    section: report["SECTION"],
-    class: report["CLASS"],
-    rank: parseInt(report["RANK"]),
-    result: report["RESULT"],
+    rollNumber: report["Roll No."],
+    section: report["Section"],
+    class: report["Class"],
+    rank: parseInt(report["Rank"]),
+    result: report["Result"],
   };
 
   // useEffect(() => {
