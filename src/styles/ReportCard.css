@@ -235,7 +235,7 @@
 
   /* Ensure watermark fits mobile screens */
   .watermark-pdf {
-    width: 300px;
+    width: 200px;
   }
 
   .signature th, .signature td {
