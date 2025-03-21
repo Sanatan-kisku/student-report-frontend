@@ -152,15 +152,21 @@ const ReportCard = () => {
     <div className="report-container">
       {showConfetti && (
         <Confetti
-          width={window.innerWidth}
-          height={window.innerHeight}
-          numberOfPieces={confettiPieces} // Smoothly reduces over time
-          gravity={0.2} // Slower falling
-          wind={0.02} // Adds slight drifting effect
-          tweenDuration={3000} // Smooth transition
-          fadeOut // Gradual fade-out effect
+          width={document.body.clientWidth}  // ✅ Ensure full width
+          height={document.body.clientHeight} // ✅ Ensure full height
+          numberOfPieces={confettiPieces} // Adjust confetti volume
+          gravity={0.2} // Slow falling effect
+          wind={0.02} // Adds slight movement
+          tweenDuration={5000} // Smooth transition effect
+          recycle={false} // Stops after animation
+          drawShape={ctx => { // Optional: Customize confetti shapes
+            ctx.beginPath();
+            ctx.arc(0, 0, 5, 0, 2 * Math.PI);
+            ctx.fill();
+          }}
         />
       )}
+
       {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
       <div className="report-card" id="reportCard">
         <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
