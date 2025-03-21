@@ -16,7 +16,7 @@ const ReportCard = () => {
   // const { width, height } = useWindowSize();
   const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
-  const [confettiPieces, setConfettiPieces] = useState(600);
+  const [confettiPieces, setConfettiPieces] = useState(1500);
 
   // 🎉 Show confetti if Rank = 1
   // useEffect(() => {
@@ -56,18 +56,18 @@ const ReportCard = () => {
   useEffect(() => {
     if (studentInfo.rank === 1) {
       setShowConfetti(true);
-      setConfettiPieces(600); // Start with more pieces
+      setConfettiPieces(1500); // Start with more pieces
 
-      let pieces = 600;
+      let pieces = 1500;
       const interval = setInterval(() => {
-        pieces -= 15; // Reduce gradually for smoother fade-out
+        pieces -= 25; // Reduce gradually for smoother fade-out
         setConfettiPieces(Math.max(0, pieces));
 
         if (pieces <= 0) {
           clearInterval(interval);
-          setTimeout(() => setShowConfetti(false), 1500); // Wait 1.5 sec before stopping
+          setTimeout(() => setShowConfetti(false), 2000); // Wait 1.5 sec before stopping
         }
-      }, 200); // Smooth decrease every 200ms
+      }, 100); // Smooth decrease every 200ms
 
       return () => clearInterval(interval);
     }
@@ -109,13 +109,13 @@ const ReportCard = () => {
       const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4 width)
       const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm (A4 height)
 
-      const imgWidth = pdfWidth - 15; // Adjust width for margins
+      const imgWidth = pdfWidth - 10; // Adjust width for margins
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
 
       if (imgHeight > pdfHeight - 20) {
-        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, pdfHeight - 20); // Fit into page
+        pdf.addImage(imgData, "JPEG", 5, 5, imgWidth, pdfHeight - 10); // Fit into page
       } else {
-        pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight); // Normal case
+        pdf.addImage(imgData, "JPEG", 5, 5, imgWidth, imgHeight); // Normal case
       }
 
       pdf.save(`${studentInfo.name} Class${studentInfo.class} Report Card.pdf`);
