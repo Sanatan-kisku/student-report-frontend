@@ -169,9 +169,9 @@ const ReportCard = () => {
           height={window.innerHeight}
           numberOfPieces={confettiPieces}
           gravity={0.2}
-          wind={0.01}
+          wind={0.02}
           tweenDuration={3000}
-          recycle={false}
+        // recycle={false}
         // drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)}
         />
       )}
