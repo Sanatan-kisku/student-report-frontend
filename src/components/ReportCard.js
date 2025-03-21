@@ -14,7 +14,7 @@ const ReportCard = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   // const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
-  const [confettiPieces, setConfettiPieces] = useState(600);
+  const [confettiPieces, setConfettiPieces] = useState(700);
 
   // 🎉 Show confetti if Rank = 1
   // useEffect(() => {
@@ -54,9 +54,9 @@ const ReportCard = () => {
   useEffect(() => {
     if (studentInfo.rank === 1) {
       setShowConfetti(true);
-      setConfettiPieces(600); // Start with more pieces
+      setConfettiPieces(700); // Start with more pieces
 
-      let pieces = 600;
+      let pieces = 700;
       const interval = setInterval(() => {
         pieces -= 15; // Reduce gradually for smoother fade-out
         setConfettiPieces(Math.max(0, pieces));
@@ -169,7 +169,7 @@ const ReportCard = () => {
           height={window.innerHeight}
           numberOfPieces={confettiPieces}
           gravity={0.2}
-          wind={0.02}
+          wind={0.01}
           tweenDuration={3000}
           recycle={false}
         // drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)}
