@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useWindowSize } from "react-use";
 import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -14,9 +13,8 @@ const ReportCard = () => {
   const report = location.state?.report || null;
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   // const { width, height } = useWindowSize();
-  const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
-  const [confettiPieces, setConfettiPieces] = useState(1500);
+  const [confettiPieces, setConfettiPieces] = useState(600);
 
   // 🎉 Show confetti if Rank = 1
   // useEffect(() => {
@@ -56,18 +54,18 @@ const ReportCard = () => {
   useEffect(() => {
     if (studentInfo.rank === 1) {
       setShowConfetti(true);
-      setConfettiPieces(1500); // Start with more pieces
+      setConfettiPieces(600); // Start with more pieces
 
-      let pieces = 1500;
+      let pieces = 600;
       const interval = setInterval(() => {
-        pieces -= 25; // Reduce gradually for smoother fade-out
+        pieces -= 15; // Reduce gradually for smoother fade-out
         setConfettiPieces(Math.max(0, pieces));
 
         if (pieces <= 0) {
           clearInterval(interval);
-          setTimeout(() => setShowConfetti(false), 2000); // Wait 1.5 sec before stopping
+          setTimeout(() => setShowConfetti(false), 1500); // Wait 1.5 sec before stopping
         }
-      }, 100); // Smooth decrease every 200ms
+      }, 200); // Smooth decrease every 200ms
 
       return () => clearInterval(interval);
     }
@@ -167,12 +165,12 @@ const ReportCard = () => {
     <div className="report-container">
       {showConfetti && (
         <Confetti
-          width={width}
-          height={height}
+          width={window.innerWidth}
+          height={window.innerHeight}
           numberOfPieces={confettiPieces}
           gravity={0.2}
           wind={0.02}
-          tweenDuration={5000}
+          tweenDuration={3000}
           recycle={false}
           drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)} // 🟡 Star Shape
         />
