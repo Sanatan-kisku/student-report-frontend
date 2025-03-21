@@ -148,17 +148,17 @@ const ReportCard = () => {
 
   // const rankStyle = getRankStyle(studentInfo.rank);
 
-  const drawStar = (ctx, x, y, radius, points, innerRadius) => {
-    ctx.beginPath();
-    for (let i = 0; i < points * 2; i++) {
-      const angle = (i * Math.PI) / points;
-      const r = i % 2 === 0 ? radius : innerRadius;
-      ctx.lineTo(x + r * Math.cos(angle), y + r * Math.sin(angle));
-    }
-    ctx.closePath();
-    ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 60%)`; // Random bright colors
-    ctx.fill();
-  };
+  // const drawStar = (ctx, x, y, radius, points, innerRadius) => {
+  //   ctx.beginPath();
+  //   for (let i = 0; i < points * 2; i++) {
+  //     const angle = (i * Math.PI) / points;
+  //     const r = i % 2 === 0 ? radius : innerRadius;
+  //     ctx.lineTo(x + r * Math.cos(angle), y + r * Math.sin(angle));
+  //   }
+  //   ctx.closePath();
+  //   ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 60%)`; // Random bright colors
+  //   ctx.fill();
+  // };
 
 
   return (
@@ -171,8 +171,8 @@ const ReportCard = () => {
           gravity={0.2}
           wind={0.02}
           tweenDuration={3000}
-          // recycle={false}
-          drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)} // 🟡 Star Shape
+          recycle={false}
+        // drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)}
         />
       )}
       {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
