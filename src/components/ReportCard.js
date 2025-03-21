@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useWindowSize } from "react-use";
 import { useLocation, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -13,6 +14,7 @@ const ReportCard = () => {
   const report = location.state?.report || null;
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   // const { width, height } = useWindowSize();
+  const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiPieces, setConfettiPieces] = useState(600);
 
@@ -148,25 +150,33 @@ const ReportCard = () => {
 
   // const rankStyle = getRankStyle(studentInfo.rank);
 
+  const drawStar = (ctx, x, y, radius, points, innerRadius) => {
+    ctx.beginPath();
+    for (let i = 0; i < points * 2; i++) {
+      const angle = (i * Math.PI) / points;
+      const r = i % 2 === 0 ? radius : innerRadius;
+      ctx.lineTo(x + r * Math.cos(angle), y + r * Math.sin(angle));
+    }
+    ctx.closePath();
+    ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 60%)`; // Random bright colors
+    ctx.fill();
+  };
+
+
   return (
     <div className="report-container">
       {showConfetti && (
         <Confetti
-          width={document.body.clientWidth}  // ✅ Ensure full width
-          height={document.body.clientHeight} // ✅ Ensure full height
-          numberOfPieces={confettiPieces} // Adjust confetti volume
-          gravity={0.2} // Slow falling effect
-          wind={0.02} // Adds slight movement
-          tweenDuration={5000} // Smooth transition effect
-          recycle={false} // Stops after animation
-          drawShape={ctx => { // Optional: Customize confetti shapes
-            ctx.beginPath();
-            ctx.arc(0, 0, 5, 0, 2 * Math.PI);
-            ctx.fill();
-          }}
+          width={width}
+          height={height}
+          numberOfPieces={confettiPieces}
+          gravity={0.2}
+          wind={0.02}
+          tweenDuration={5000}
+          recycle={false}
+          drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)} // 🟡 Star Shape
         />
       )}
-
       {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
       <div className="report-card" id="reportCard">
         <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
