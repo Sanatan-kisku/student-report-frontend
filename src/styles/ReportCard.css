@@ -26,14 +26,37 @@
   line-height: .9;
 }
 
-.school-info h2 {
-  font-size: 23px;
-}
 
 .header-image {
   width: 125px;
   height: 125px;
 }
+
+/*  */
+.school-info h2 {
+  font-size: 27px;
+  margin-bottom: -11px;
+  margin-top: 20px;
+}
+
+.school-info h3{
+  font-size: 8px;
+  margin-top: 16px;
+}
+
+.school-info p {
+  font-size: 5px;
+}
+
+h3 {
+  font-size: 6px;
+}
+
+h2 {
+  font-size: 8px;
+}
+
+/*  */
 
 .table-heading {
   color:#0056b3;
