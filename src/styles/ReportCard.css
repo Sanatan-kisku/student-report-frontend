@@ -210,7 +210,7 @@ h2 {
   }
 
   .report-card h3{
-    margin: 5px;
+    margin: 6px;
   }
 
   .report-card table {
@@ -230,16 +230,20 @@ h2 {
   .school-info h2 {
     font-size: 9px;
     margin-bottom: -11px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .school-info h3{
     font-size: 8px;
-    margin-top: 16px;
+    margin-top: 20px;
   }
 
   .school-info p {
     font-size: 5px;
+  }
+
+  .report-card p {
+    margin-top: 9px;
   }
 
   h3 {
