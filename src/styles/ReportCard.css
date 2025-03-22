@@ -71,8 +71,8 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
-  opacity: 0.1; /* Low opacity to act as watermark */
-  z-index: 0; /* Keep it behind text */
+  opacity: 0.1;
+  z-index: 0;
 }
 
 
@@ -91,8 +91,9 @@ h2 {
   overflow: hidden;  
   word-wrap: break-word; */
   position: relative; /* Ensure watermark stays behind content */
-  width: 80%;
-  max-width: 900px;  /* Limit maximum width */
+  width: 900px;  /* Force desktop width */
+  max-width: 900px;  /* Limit maximum width */  
+  min-width: 900px; /* Prevent shrinking on mobile */
   margin: 20px auto;
   padding: 20px;
   border: 2px solid #000;
@@ -197,10 +198,16 @@ h2 {
 
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
+  html, body {
+    width: 100vw;
+    overflow-x: auto; /* Enable horizontal scroll to fit desktop view */
+  }
+
   .report-card {
-    width: 95%; /* Ensure it fits on mobile */
-    padding: 10px;
+    width: 900px;  /* Force desktop width */
+    min-width: 900px;
     margin: auto;
+    overflow-x: scroll; /* Allow scrolling instead of shrinking */
   }
 
 
