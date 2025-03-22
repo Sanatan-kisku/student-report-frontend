@@ -27,12 +27,12 @@
 }
 
 .school-info h2 {
-  font-size: 27px;
+  font-size: 23px;
 }
 
 .header-image {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
 }
 
 .table-heading {
@@ -111,7 +111,7 @@
 }
 
 .report-card h3 {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .remark {

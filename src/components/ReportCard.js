@@ -101,7 +101,7 @@ const ReportCard = () => {
       scrollX: 0, // Prevents horizontal scroll issues
       scrollY: 0, // Prevents vertical scroll issues
     }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg", 0.9); // Optimized quality
+      const imgData = canvas.toDataURL("image/jpeg", 1); // Optimized quality
       const pdf = new jsPDF("p", "mm", "a4");
 
       const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4 width)
