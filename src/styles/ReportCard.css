@@ -168,6 +168,18 @@ h2 {
   background-color: #0056b3;
 } */
 
+.download-warning {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background-color: #fff3cd; /* Light yellow background for visibility */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ffeeba;
+}
+
 .floating-buttons {
   position: fixed;
   bottom: 20px;

@@ -320,6 +320,9 @@ const ReportCard = () => {
           </table>
         </div>
       </div>
+      <div className="download-warning">
+        <p><strong>📢 It is recommended to download the PDF on a computer for the best experience. Avoid using Desktop Mode on a mobile browser.</strong></p>
+      </div>
       <div className="download-btn floating-buttons" style={{ textAlign: "center", marginTop: "20px" }}>
         <button onClick={handleDownloadPDF}>Download PDF</button>
         <button onClick={() => navigate("/")}>Return Home</button>
