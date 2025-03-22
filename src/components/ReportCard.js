@@ -94,13 +94,13 @@ const ReportCard = () => {
     const reportCardElement = document.querySelector(".report-card");
 
     // Dynamically adjust scale based on screen size
-    const scaleFactor = window.innerWidth <= 768 ? 2.5 : 3; // Smaller scale for mobile
+    const scaleFactor = window.innerWidth <= 768 ? 4 : 3; // Smaller scale for mobile
     const pdfMargin = window.innerWidth <= 768 ? 5 : 10; // Less margin for mobile
 
     html2canvas(reportCardElement, {
       scale: scaleFactor, // Adjusted scale for better clarity
       useCORS: true, // Prevents cross-origin issues
-      dpi: 300, // Ensure high DPI for sharper text
+      dpi: 500, // Ensure high DPI for sharper text
       letterRendering: true,
       scrollX: 0, // Prevents horizontal scroll issues
       scrollY: 0, // Prevents vertical scroll issues
