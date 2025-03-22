@@ -93,32 +93,37 @@ const ReportCard = () => {
   const handleDownloadPDF = () => {
     const reportCardElement = document.querySelector(".report-card");
 
+    // Dynamically adjust scale based on screen size
+    const scaleFactor = window.innerWidth <= 768 ? 2.5 : 3; // Smaller scale for mobile
+    const pdfMargin = window.innerWidth <= 768 ? 5 : 10; // Less margin for mobile
+
     html2canvas(reportCardElement, {
-      scale: 3, // Ensures high clarity
+      scale: scaleFactor, // Adjusted scale for better clarity
       useCORS: true, // Prevents cross-origin issues
       dpi: 300, // Ensure high DPI for sharper text
       letterRendering: true,
       scrollX: 0, // Prevents horizontal scroll issues
       scrollY: 0, // Prevents vertical scroll issues
     }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/jpeg", 1); // Optimized quality
+      const imgData = canvas.toDataURL("image/jpeg", 1); // High-quality image
       const pdf = new jsPDF("p", "mm", "a4");
 
       const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4 width)
       const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm (A4 height)
 
-      const imgWidth = pdfWidth - 10; // Adjust width for margins
+      const imgWidth = pdfWidth - pdfMargin * 2; // Apply dynamic margin
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
 
-      if (imgHeight > pdfHeight - 20) {
-        pdf.addImage(imgData, "JPEG", 5, 5, imgWidth, pdfHeight - 10); // Fit into page
+      if (imgHeight > pdfHeight - pdfMargin * 2) {
+        pdf.addImage(imgData, "JPEG", pdfMargin, pdfMargin, imgWidth, pdfHeight - pdfMargin * 2); // Fit into page
       } else {
-        pdf.addImage(imgData, "JPEG", 5, 5, imgWidth, imgHeight); // Normal case
+        pdf.addImage(imgData, "JPEG", pdfMargin, pdfMargin, imgWidth, imgHeight); // Normal case
       }
 
       pdf.save(`${studentInfo.name} Class${studentInfo.class} Report Card.pdf`);
     });
   };
+
 
 
   // const handleDownloadPDF = () => {
