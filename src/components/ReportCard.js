@@ -95,7 +95,7 @@ const ReportCard = () => {
 
     // Dynamically adjust scale based on screen size
     const scaleFactor = window.innerWidth <= 768 ? 7 : 3;
-    const pdfMargin = window.innerWidth <= 768 ? 5 : 10; // Less margin for mobile
+    const pdfMargin = window.innerWidth <= 768 ? 5 : 5; // Less margin for mobile
 
     html2canvas(reportCardElement, {
       scale: scaleFactor, // Adjusted scale for better clarity
