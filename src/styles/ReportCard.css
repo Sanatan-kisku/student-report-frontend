@@ -199,11 +199,6 @@ h2 {
 
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
-  
-  html, body {
-    width: 100vw;
-    overflow-x: auto; /* Enable horizontal scroll to fit desktop view */
-  }
 
   .report-card {
     width: 95%; /* Ensure it fits on mobile */
