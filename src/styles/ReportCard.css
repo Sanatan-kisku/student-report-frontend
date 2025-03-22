@@ -65,6 +65,7 @@ h2 {
   font-family: "Times New Roman", Times, serif;
 } */
 
+
 .watermark-pdf {
   position: absolute;
   top: 50%;
@@ -198,16 +199,16 @@ h2 {
 
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
+  
   html, body {
     width: 100vw;
     overflow-x: auto; /* Enable horizontal scroll to fit desktop view */
   }
 
   .report-card {
-    width: 900px;  /* Force desktop width */
-    min-width: 900px;
+    width: 95%; /* Ensure it fits on mobile */
+    padding: 10px;
     margin: auto;
-    overflow-x: scroll; /* Allow scrolling instead of shrinking */
   }
 
 
