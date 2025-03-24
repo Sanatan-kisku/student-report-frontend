@@ -95,7 +95,10 @@ h2 {
   max-width: 900px;  /* Limit maximum width */
   margin: 20px auto;
   padding: 20px;
-  border: 2px solid #000;
+  /* border: 2px solid #000; */
+  border: 8px double #0056b3; /* Stylish double border */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
   text-align: center;
   font-family: "Times New Roman", Times, serif;
 }
