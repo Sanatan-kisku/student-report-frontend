@@ -97,7 +97,7 @@ h2 {
   padding: 20px;
   /* border: 2px solid #000; */
   border: 8px double #0056b3; /* Stylish double border */
-  border-radius: 15px; /* Rounded corners */
+  /* border-radius: 15px; */
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
   text-align: center;
   font-family: "Times New Roman", Times, serif;
@@ -225,6 +225,7 @@ h2 {
   }
 
   .report-card h3{
+    font-size: 5px;
     margin: 6px;
   }
 
