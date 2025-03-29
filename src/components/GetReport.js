@@ -63,7 +63,7 @@ const GetReport = () => {
       {/* Exam Incharge's Image and Details */}
       <div className="principal-container">
         <img src="/examincharge.jpg" alt="Exam Incharge" className="examincharge-image" />
-        <p className="examincharge-name">Mr. Chinmaya kumar Panigrahi</p>
+        <p className="examincharge-name">Mr. Chinmaya Kumar Panigrahi</p>
         <p className="examincharge-designation">Exam Incharge, OAV Surada</p>
       </div>
       <div className="form-box">
