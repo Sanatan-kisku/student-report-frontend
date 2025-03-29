@@ -141,6 +141,9 @@ select, input {
 }
 
 @media (max-width: 600px) {
+  .form-box h2{
+    font-size: 16px;
+  }
   .school-heading {
     font-size: 28px;
     margin: 10px;
