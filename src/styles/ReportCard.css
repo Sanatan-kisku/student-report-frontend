@@ -291,7 +291,7 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   }
 
   .signature th, .signature td {
-    text-align: left;
+    text-align: center;
     padding: 10px;
   }
 
@@ -299,6 +299,27 @@ td:nth-of-type(2) .signature-img { /* Second signature */
     width: 100%;
     font-size: 14px;
     padding: 8px;
+  }
+  
+  .signature-section table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 10px;
+  }
+
+  .signature-section th, .signature-section td {
+    border: none;
+    text-align: center;
+    padding: 30px 0;
+    width: 50%; /* Equal column width */
+  }
+
+  .signature-img {
+    /* width: 120px; */
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
   td:nth-of-type(1) .signature-img { /* First signature */
