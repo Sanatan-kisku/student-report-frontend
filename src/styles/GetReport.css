@@ -2,11 +2,16 @@
 
 .get-report-container {
   background: url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the image fixed while scrolling */
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .school-heading {
