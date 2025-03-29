@@ -154,10 +154,18 @@ h2 {
 }
 
 .signature-img {
-  width: 120px;  /* Adjust size */
+  /* width: 120px; */
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.signature-img:nth-of-type(1) { /* First signature */
+  width: 180px;
+}
+
+.signature-img:nth-of-type(2) { /* Second signature */
+  width: 120px;
 }
 
 .subject, .activity {
