@@ -58,7 +58,13 @@ const GetReport = () => {
       <div className="principal-container">
         <img src="/principal.jpg" alt="Principal" className="principal-image" />
         <p className="principal-name">Mr. Ashis Mishra</p>
-        <p className="principal-designation">Vice-Principal, OAV Surada</p>
+        <p className="principal-designation">Principal, OAV Surada</p>
+      </div>
+      {/* Exam Incharge's Image and Details */}
+      <div className="principal-container">
+        <img src="/examincharge.jpg" alt="Exam Incharge" className="examincharge-image" />
+        <p className="examincharge-name">Mr. Chinmaya kumar Panigrahi</p>
+        <p className="examincharge-designation">Exam Incharge, OAV Surada</p>
       </div>
       <div className="form-box">
         <h2>Student Report Card</h2>

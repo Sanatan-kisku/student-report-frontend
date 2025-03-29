@@ -53,6 +53,31 @@
   margin: 5px;
 }
 
+.examincharge-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.examincharge-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+.examincharge-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.examincharge-designation {
+  font-size: 16px;
+  color: #000000;
+  margin: 5px;
+}
+
 .published-info {
   background-color: #fffae6; /* Light Yellow */
   border-left: 5px solid #f4c542; /* Yellow Border */
