@@ -199,11 +199,11 @@ const ReportCard = () => {
         // drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)}
         />
       )}
-      {studentInfo.rank === 1 && (
+      {/* {studentInfo.rank === 1 && (
         <div className="rank-flash">
           🎉 Congratulations! You achieved Rank 1 🎉
         </div>
-      )}
+      )} */}
       {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
       <div className="report-card" id="reportCard">
         <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
