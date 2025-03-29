@@ -165,6 +165,25 @@ const ReportCard = () => {
   //   ctx.fill();
   // };
 
+  const subjectOrders = {
+    6: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
+    7: ["ENGLISH", "ODIA", "MATHEMATICS", "SCIENCE", "SOCIAL SCIENCE", "I C T", "HINDI", "SANSKRIT"],
+    8: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
+    9: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
+    11: ["English", "Mathematics", "Physics", "Chemistry", "Biology", "I C T", "PE"]
+  };
+
+  const sortSubjects = (subjects, studentClass) => {
+    const order = subjectOrders[studentClass] || [];
+    return subjects.sort((a, b) => {
+      return order.indexOf(a.name) - order.indexOf(b.name);
+    });
+  };
+
+  const ReportCard = ({ subjects, studentClass }) => {
+    const sortedSubjects = sortSubjects([...subjects], studentClass);
+  };
+
 
   return (
     <div className="report-container">
@@ -231,8 +250,10 @@ const ReportCard = () => {
             </tr>
           </thead>
           <tbody>
-            {subjects.map((subject, index) => (
-              <tr key={subject}>
+            {/* {subjects.map((subject, index) => (
+                <tr key={subject}> */}
+            {sortedSubjects.map((subject, index) => (
+              <tr key={index}>
                 <td>{index + 1}</td>
                 <td className="subject">{subject}</td>
                 <td>{report[`PT1 ${subject}`] || "-"}</td>

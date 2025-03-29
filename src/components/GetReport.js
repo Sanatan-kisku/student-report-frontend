@@ -59,7 +59,7 @@ const GetReport = () => {
         {/* Show a message when reports are available */}
         {publishedClasses.length > 0 && (
           <p className="published-info">
-            📢 Annual Report Card for **Class {publishedClasses.join(", ")}** has been published!
+            📢 Annual Report Card for Class {publishedClasses.join(", ")} has been published!
           </p>
         )}
         <div className="form-row">
