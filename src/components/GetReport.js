@@ -54,6 +54,12 @@ const GetReport = () => {
   return (
     <div className="get-report-container">
       <h1 className="school-heading">Odisha Adarsha Vidyalaya, Surada, Ganjam</h1>
+      {/* Principal's Image and Details */}
+      <div className="principal-container">
+        <img src="/principal.jpg" alt="Principal" className="principal-image" />
+        <p className="principal-name">Dr. [Principal's Name]</p>
+        <p className="principal-designation">Principal, OAV Surada</p>
+      </div>
       <div className="form-box">
         <h2>Student Report Card</h2>
         {/* Show a message when reports are available */}

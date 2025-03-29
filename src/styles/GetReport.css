@@ -23,6 +23,30 @@
   text-transform: uppercase;
 } 
 
+.principal-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.principal-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+.principal-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.principal-designation {
+  font-size: 16px;
+  color: #555;
+}
+
 .published-info {
   background-color: #fffae6; /* Light Yellow */
   border-left: 5px solid #f4c542; /* Yellow Border */
