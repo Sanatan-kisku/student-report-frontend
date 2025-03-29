@@ -315,6 +315,10 @@ td:nth-of-type(2) .signature-img { /* Second signature */
     width: 50%; /* Equal column width */
   }
 
+  .signature-section p {
+    font-size: 10px;
+  }
+
   .signature-img {
     /* width: 120px; */
     height: auto;
