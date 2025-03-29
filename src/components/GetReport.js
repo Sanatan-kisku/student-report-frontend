@@ -25,6 +25,8 @@ const GetReport = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const publishedClasses = [6, 7, 8, 9, 11]; // Classes with published reports
+
   const fetchReport = async () => {
 
     setLoading(true); // Show loading
@@ -54,6 +56,12 @@ const GetReport = () => {
       <h1 className="school-heading">Odisha Adarsha Vidyalaya, Surada, Ganjam</h1>
       <div className="form-box">
         <h2>Student Report Card</h2>
+        {/* Show a message when reports are available */}
+        {publishedClasses.length > 0 && (
+          <p className="published-info">
+            📢 Annual Report Card for **Class {publishedClasses.join(", ")}** has been published!
+          </p>
+        )}
         <div className="form-row">
           <div>
             <label>Class</label>
