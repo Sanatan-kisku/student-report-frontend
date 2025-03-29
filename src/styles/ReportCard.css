@@ -224,6 +224,23 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   background-color: #0056b3;
 }
 
+@keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.rank-flash {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00; /* Gold color */
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  animation: flash 1s infinite;
+}
+
 
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
