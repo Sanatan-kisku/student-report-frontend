@@ -165,194 +165,194 @@ const ReportCard = () => {
   //   ctx.fill();
   // };
 
-  const subjectOrders = {
-    6: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
-    7: ["ENGLISH", "ODIA", "MATHEMATICS", "SCIENCE", "SOCIAL SCIENCE", "I C T", "HINDI", "SANSKRIT"],
-    8: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
-    9: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
-    11: ["English", "Mathematics", "Physics", "Chemistry", "Biology", "I C T", "PE"]
-  };
+  // const subjectOrders = {
+  //   6: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
+  //   7: ["ENGLISH", "ODIA", "MATHEMATICS", "SCIENCE", "SOCIAL SCIENCE", "I C T", "HINDI", "SANSKRIT"],
+  //   8: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
+  //   9: ["English", "Odia", "Mathematics", "Science", "Social Science", "I C T", "Hindi", "Sanskrit"],
+  //   11: ["English", "Mathematics", "Physics", "Chemistry", "Biology", "I C T", "PE"]
+  // };
 
-  const sortSubjects = (subjects, studentClass) => {
-    const order = subjectOrders[studentClass] || [];
-    return subjects.sort((a, b) => {
-      return order.indexOf(a.name) - order.indexOf(b.name);
-    });
-  };
+  // const sortSubjects = (subjects, studentClass) => {
+  //   const order = subjectOrders[studentClass] || [];
+  //   return subjects.sort((a, b) => {
+  //     return order.indexOf(a.name) - order.indexOf(b.name);
+  //   });
+  // };
 
-  const ReportCard = ({ subjects, studentClass }) => {
-    const sortedSubjects = sortSubjects([...subjects], studentClass);
+  // const ReportCard = ({ subjects, studentClass }) => {
+  //   const sortedSubjects = sortSubjects([...subjects], studentClass);
 
 
 
-    return (
-      <div className="report-container">
-        {showConfetti && (
-          <Confetti
-            width={window.innerWidth}
-            height={window.innerHeight}
-            numberOfPieces={confettiPieces}
-            gravity={0.2}
-            wind={0.02}
-            tweenDuration={3000}
-          // recycle={false}
-          // drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)}
-          />
-        )}
-        {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
-        <div className="report-card" id="reportCard">
-          <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
-          <div className="header-section">
-            <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
-            <div className="school-info center">
-              <h2><strong>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</strong></h2>
-              <h3><b>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108 <br /> &#9993; sorada@oav.edu.in</b></h3>
-              <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
-            </div>
-            <img src="/OavLogo.jpeg" alt="Right" className="header-image box right" />
+  return (
+    <div className="report-container">
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={confettiPieces}
+          gravity={0.2}
+          wind={0.02}
+          tweenDuration={3000}
+        // recycle={false}
+        // drawShape={(ctx) => drawStar(ctx, 0, 0, 6, 5, 3)}
+        />
+      )}
+      {/* <img src="/OavLogo.jpeg" alt="Watermark" className="watermark" /> */}
+      <div className="report-card" id="reportCard">
+        <img src="/OavLogo.jpeg" alt="Watermark" className="watermark-pdf" />
+        <div className="header-section">
+          <img src="/OdishaLogo.svg.png" alt="Left" className="header-image box left" />
+          <div className="school-info center">
+            <h2><strong>ODISHA ADARSHA VIDYALAYA, SURADA, GANJAM</strong></h2>
+            <h3><b>At/Po-Surada, Block-Surada, Dist-Ganjam, Pin-761108 <br /> &#9993; sorada@oav.edu.in</b></h3>
+            <p>(OAVS, BBSR UNDER DEPT. OF SCHOOL & MASS EDUCATION GOVT.OF ODISHA)</p>
           </div>
-          <h3>Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501 </h3>
-          <h2>PROGRESS REPORT CARD 2024-25</h2>
-          {/* <div>
+          <img src="/OavLogo.jpeg" alt="Right" className="header-image box right" />
+        </div>
+        <h3>Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501 </h3>
+        <h2>PROGRESS REPORT CARD 2024-25</h2>
+        {/* <div>
           <p><strong>Name:</strong> {studentInfo.name}</p>
           <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
         </div> */}
-          <table>
+        <table>
+          <tr>
+            <td colspan="4"><b>NAME OF THE STUDENT</b></td>
+            <td colspan="4">{studentInfo.name}</td>
+          </tr>
+          <tr>
+            <td><b>CLASS</b></td>
+            <td>{studentInfo.class}</td>
+            <td><b>SEC</b></td>
+            <td>{studentInfo.section}</td>
+            <td><b>ROLL NO</b></td>
+            <td colSpan={isMobile ? 3 : 3}>{studentInfo.rollNumber}</td>
+          </tr>
+        </table>
+
+        <h3 className="table-heading">SCHOLASTIC DETAILS</h3>
+        <table>
+          <thead>
             <tr>
-              <td colspan="4"><b>NAME OF THE STUDENT</b></td>
-              <td colspan="4">{studentInfo.name}</td>
+              <th rowSpan="2">SL NO</th>
+              <th rowSpan="2">SUBJECT</th>
+              <th colSpan="6">MARKS SECURED</th>
             </tr>
             <tr>
-              <td><b>CLASS</b></td>
-              <td>{studentInfo.class}</td>
-              <td><b>SEC</b></td>
-              <td>{studentInfo.section}</td>
-              <td><b>ROLL NO</b></td>
-              <td colSpan={isMobile ? 3 : 3}>{studentInfo.rollNumber}</td>
+              <th>PT1</th>
+              <th>PT2</th>
+              <th>HY</th>
+              <th>PT3</th>
+              <th>PT4</th>
+              <th>ANNUAL</th>
             </tr>
-          </table>
+          </thead>
+          <tbody>
+            {subjects.map((subject, index) => (
+              <tr key={subject}>
+                {/* {sortedSubjects.map((subject, index) => (
+              <tr key={index}> */}
+                <td>{index + 1}</td>
+                <td className="subject">{subject}</td>
+                <td>{report[`PT1 ${subject}`] || "-"}</td>
+                <td>{report[`PT2 ${subject}`] || "-"}</td>
+                <td>{report[`HY ${subject}`] || "-"}</td>
+                <td>{report[`PT3 ${subject}`] || "-"}</td>
+                <td>{report[`PT4 ${subject}`] || "-"}</td>
+                <td>{report[`ANNUAL ${subject}`] || "-"}</td>
+              </tr>
+            ))}
+            <tr>
+              <td colSpan="2"><strong>TOTAL MARK</strong></td>
+              <td>{report["PT1 TOTAL MARK"] || "-"}</td>
+              <td>{report["PT2 TOTAL MARK"] || "-"}</td>
+              <td>{report["HY TOTAL MARK"] || "-"}</td>
+              <td>{report["PT3 TOTAL MARK"] || "-"}</td>
+              <td>{report["PT4 TOTAL MARK"] || "-"}</td>
+              <td>{report["ANNUAL TOTAL MARK"] || "-"}</td>
+            </tr>
+            <tr>
+              <td colSpan="2"><strong>TOTAL PERCENTAGE</strong></td>
+              <td>{report["PT1 %age"] ? parseFloat(report["PT1 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["PT2 %age"] ? parseFloat(report["PT2 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["HY %age"] ? parseFloat(report["HY %age"]).toFixed(2) : "-"}</td>
+              <td>{report["PT3 %age"] ? parseFloat(report["PT3 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["PT4 %age"] ? parseFloat(report["PT4 %age"]).toFixed(2) : "-"}</td>
+              <td>{report["ANNUAL %age"] ? parseFloat(report["ANNUAL %age"]).toFixed(2) : "-"}</td>
+            </tr>
+            <tr>
+              <td colSpan="4"><strong>RANK</strong></td>
+              <td colSpan="4">
+                <h3>
+                  {studentInfo.rank}
+                </h3>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="4"><strong>RESULT</strong></td>
+              <td colSpan="4">{studentInfo.result}</td>
+            </tr>
+          </tbody>
+        </table>
 
-          <h3 className="table-heading">SCHOLASTIC DETAILS</h3>
-          <table>
-            <thead>
-              <tr>
-                <th rowSpan="2">SL NO</th>
-                <th rowSpan="2">SUBJECT</th>
-                <th colSpan="6">MARKS SECURED</th>
-              </tr>
-              <tr>
-                <th>PT1</th>
-                <th>PT2</th>
-                <th>HY</th>
-                <th>PT3</th>
-                <th>PT4</th>
-                <th>ANNUAL</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* {subjects.map((subject, index) => (
-                <tr key={subject}> */}
-              {sortedSubjects.map((subject, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td className="subject">{subject}</td>
-                  <td>{report[`PT1 ${subject}`] || "-"}</td>
-                  <td>{report[`PT2 ${subject}`] || "-"}</td>
-                  <td>{report[`HY ${subject}`] || "-"}</td>
-                  <td>{report[`PT3 ${subject}`] || "-"}</td>
-                  <td>{report[`PT4 ${subject}`] || "-"}</td>
-                  <td>{report[`ANNUAL ${subject}`] || "-"}</td>
-                </tr>
-              ))}
-              <tr>
-                <td colSpan="2"><strong>TOTAL MARK</strong></td>
-                <td>{report["PT1 TOTAL MARK"] || "-"}</td>
-                <td>{report["PT2 TOTAL MARK"] || "-"}</td>
-                <td>{report["HY TOTAL MARK"] || "-"}</td>
-                <td>{report["PT3 TOTAL MARK"] || "-"}</td>
-                <td>{report["PT4 TOTAL MARK"] || "-"}</td>
-                <td>{report["ANNUAL TOTAL MARK"] || "-"}</td>
-              </tr>
-              <tr>
-                <td colSpan="2"><strong>TOTAL PERCENTAGE</strong></td>
-                <td>{report["PT1 %age"] ? parseFloat(report["PT1 %age"]).toFixed(2) : "-"}</td>
-                <td>{report["PT2 %age"] ? parseFloat(report["PT2 %age"]).toFixed(2) : "-"}</td>
-                <td>{report["HY %age"] ? parseFloat(report["HY %age"]).toFixed(2) : "-"}</td>
-                <td>{report["PT3 %age"] ? parseFloat(report["PT3 %age"]).toFixed(2) : "-"}</td>
-                <td>{report["PT4 %age"] ? parseFloat(report["PT4 %age"]).toFixed(2) : "-"}</td>
-                <td>{report["ANNUAL %age"] ? parseFloat(report["ANNUAL %age"]).toFixed(2) : "-"}</td>
-              </tr>
-              <tr>
-                <td colSpan="4"><strong>RANK</strong></td>
-                <td colSpan="4">
-                  <h3>
-                    {studentInfo.rank}
-                  </h3>
-                </td>
-              </tr>
-              <tr>
-                <td colSpan="4"><strong>RESULT</strong></td>
-                <td colSpan="4">{studentInfo.result}</td>
-              </tr>
-            </tbody>
-          </table>
-
-          {/* <h3>Rank: {studentInfo.rank}</h3>
+        {/* <h3>Rank: {studentInfo.rank}</h3>
         <h3>Result: {studentInfo.result}</h3> */}
 
-          <h3 className="table-heading">CO-SCHOLASTIC DETAILS</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>SL NO</th>
-                <th>ACTIVITY</th>
-                <th>GRADE</th>
+        <h3 className="table-heading">CO-SCHOLASTIC DETAILS</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>SL NO</th>
+              <th>ACTIVITY</th>
+              <th>GRADE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coScholastic.map((activity) => (
+              <tr key={activity.id}>
+                <td>{activity.id}</td>
+                <td className="activity">{activity.activity}</td>
+                <td>{activity.grade}</td>
               </tr>
-            </thead>
-            <tbody>
-              {coScholastic.map((activity) => (
-                <tr key={activity.id}>
-                  <td>{activity.id}</td>
-                  <td className="activity">{activity.activity}</td>
-                  <td>{activity.grade}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            ))}
+          </tbody>
+        </table>
 
-          <table className="remark-table">
-            <tbody>
-              <tr>
-                <td style={{ textAlign: "left" }}><strong>REMARK:</strong></td>
-              </tr>
-            </tbody>
-          </table>
+        <table className="remark-table">
+          <tbody>
+            <tr>
+              <td style={{ textAlign: "left" }}><strong>REMARK:</strong></td>
+            </tr>
+          </tbody>
+        </table>
 
-          <div className="signature-section">
-            <table className="signature">
-              <tr>
-                <td>
-                  <img src="/ExamInchargeSignature.jpg" alt="Exam Incharge Signature" className="signature-img" />
-                  <p>Exam Incharge</p>
-                </td>
-                <td>
-                  <img src="/PrincipalSignature.jpg" alt="Principal Signature" className="signature-img" />
-                  <p>Principal</p>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div className="download-warning">
-          <p><strong>📢 It is recommended to download the PDF on a computer for the best experience. Avoid using Desktop Mode on a mobile browser.</strong></p>
-        </div>
-        <div className="download-btn floating-buttons" style={{ textAlign: "center", marginTop: "20px" }}>
-          <button onClick={handleDownloadPDF}>Download PDF</button>
-          <button onClick={() => navigate("/")}>Return Home</button>
+        <div className="signature-section">
+          <table className="signature">
+            <tr>
+              <td>
+                <img src="/ExamInchargeSignature.jpg" alt="Exam Incharge Signature" className="signature-img" />
+                <p>Exam Incharge</p>
+              </td>
+              <td>
+                <img src="/PrincipalSignature.jpg" alt="Principal Signature" className="signature-img" />
+                <p>Principal</p>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
-    );
-  };
+      <div className="download-warning">
+        <p><strong>📢 It is recommended to download the PDF on a computer for the best experience. Avoid using Desktop Mode on a mobile browser.</strong></p>
+      </div>
+      <div className="download-btn floating-buttons" style={{ textAlign: "center", marginTop: "20px" }}>
+        <button onClick={handleDownloadPDF}>Download PDF</button>
+        <button onClick={() => navigate("/")}>Return Home</button>
+      </div>
+    </div>
+  );
+  // };
 };
 
 export default ReportCard;
