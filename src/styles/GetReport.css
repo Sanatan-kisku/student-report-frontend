@@ -51,6 +51,7 @@
   font-size: 16px;
   color: #000000;
   margin: 5px;
+  white-space: nowrap;
 }
 
 .examincharge-container {
