@@ -160,11 +160,11 @@ h2 {
   margin: 0 auto;
 }
 
-.signature-img:nth-of-type(1) { /* First signature */
+td:nth-of-type(1) .signature-img { /* First signature */
   width: 180px;
 }
 
-.signature-img:nth-of-type(2) { /* Second signature */
+td:nth-of-type(2) .signature-img { /* Second signature */
   width: 120px;
 }
 
