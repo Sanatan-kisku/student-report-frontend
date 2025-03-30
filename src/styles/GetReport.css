@@ -162,6 +162,20 @@ select, input {
   background: #0056b3;
 }
 
+.footer {
+  background: #002147; /* A dark blue shade */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  position: relative; /* Adjust if needed */
+  width: 100%;
+}
+
+.footer strong {
+  color: #ffcc00; /* Highlighting your name in yellow */
+}
+
 @media (max-width: 600px) {
   .form-box h2{
     font-size: 23px;
@@ -260,4 +274,8 @@ select, input {
   white-space: nowrap;
 }
 
+  .footer {
+    font-size: 12px;  /* Reduce font size for small screens */
+    padding: 10px;
+  }
 }
