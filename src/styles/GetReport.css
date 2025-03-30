@@ -97,7 +97,7 @@ body {
   white-space: nowrap;
 }
 
-.published-info {
+.form-box .published-info {
   background-color: #fffae6; /* Light Yellow */
   border-left: 5px solid #f4c542; /* Yellow Border */
   padding: 10px;
@@ -116,7 +116,7 @@ body {
   width: 350px;
 }
 
-h2 {
+.form-box h2 {
   color: #007bff;
   margin: 0px;
   font-size: 26px;
@@ -144,6 +144,7 @@ select, input {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .get-report-btn {
