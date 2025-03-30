@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .get-report-container {
-  background: url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
+  background: url('/OAVSuradaSchool.jpg') no-repeat center center/cover;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Keeps the image fixed while scrolling */
@@ -11,7 +11,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 20px;  
+  min-height: 100vh;
+}
+
+/* Adding a dark overlay */
+.get-report-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5 = 50% dark) */
+  z-index: 1;
+}
+
+/* Ensure all content appears above the overlay */
+.get-report-container > * {
+  position: relative;
+  z-index: 2;
 }
 
 .school-heading {
