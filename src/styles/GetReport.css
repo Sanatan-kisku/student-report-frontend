@@ -4,6 +4,12 @@ body {
   font-family: 'Poppins', sans-serif; /* Change to your chosen font */
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .get-report-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   background-size: cover;
@@ -167,9 +173,11 @@ select, input {
   background: #002147; /* A dark blue shade */
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 0px;
   font-size: 14px;
   position: relative; /* Adjust if needed */
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
 
