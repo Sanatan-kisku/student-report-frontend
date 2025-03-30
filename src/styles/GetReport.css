@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+body {
+  font-family: 'Poppins', sans-serif; /* Change to your chosen font */
+}
+
 .get-report-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   background-size: cover;
@@ -155,7 +159,8 @@ select, input {
 
 @media (max-width: 600px) {
   .form-box h2{
-    font-size: 16px;
+    font-size: 23px;
+    margin: 0;
   }
   .school-heading {
     font-size: 28px;
@@ -173,6 +178,14 @@ select, input {
 
   .form-row div {
     min-width: unset;
+  }
+
+  label {
+    margin: 5px;
+}
+
+  .published-info {
+    margin-bottom: 0px;
   }
 
   
