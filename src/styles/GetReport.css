@@ -4,16 +4,6 @@ body {
   font-family: 'Poppins', sans-serif; /* Change to your chosen font */
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.routes {
-  flex: 1;
-}
-
 .get-report-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   background-size: cover;
@@ -172,22 +162,22 @@ select, input {
 .get-report-btn:hover {
   background: #0056b3;
 }
-
+/* 
 .footer {
-  background: #002147; /* A dark blue shade */
+  background: #002147; 
   color: white;
   text-align: center;
   padding: 0px;
   font-size: 14px;
-  position: relative; /* Adjust if needed */
+  position: relative; 
   bottom: 0;
   left: 0;
   width: 100%;
 }
 
 .footer strong {
-  color: #ffcc00; /* Highlighting your name in yellow */
-}
+  color: #ffcc00; 
+} */
 
 @media (max-width: 600px) {
   .form-box h2{
@@ -286,9 +276,9 @@ select, input {
   margin: 3px;
   white-space: nowrap;
 }
-
+/* 
   .footer {
-    font-size: 10px;  /* Reduce font size for small screens */
+    font-size: 10px;  
     padding: 0px;
-  }
+  } */
 }

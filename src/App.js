@@ -27,13 +27,15 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<GetReport />} />
-        <Route path="/report-card" element={<ReportCard />} />
-        <Route path="/admin-login" element={<AdminLogin setToken={setToken} />} />
-        <Route path="/admin-upload" element={token ? <UploadFiles /> : <AdminLogin setToken={setToken} />} />
-      </Routes>
-      <Footer />
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<GetReport />} />
+          <Route path="/report-card" element={<ReportCard />} />
+          <Route path="/admin-login" element={<AdminLogin setToken={setToken} />} />
+          <Route path="/admin-upload" element={token ? <UploadFiles /> : <AdminLogin setToken={setToken} />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }

@@ -114,9 +114,6 @@ const GetReport = () => {
         <button className="get-report-btn" onClick={fetchReport}>Get Report</button>
         {loading && <p>Loading Report...</p>}
       </div>
-      <footer className="footer">
-        <p>Website Designed and Developed by <strong>Mr. Sanatan Kisku</strong>, PGT Computer Science, OAV Surada</p>
-      </footer>
     </div>
   );
 };

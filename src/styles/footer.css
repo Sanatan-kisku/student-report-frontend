@@ -1,0 +1,44 @@
+/* Make the root container full height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Push content above the footer */
+.routes {
+  flex: 1;
+}
+
+/* Sticky footer */
+.footer {
+  background: #002147; /* Dark Blue */
+  color: white;
+  text-align: center;
+  padding: 0px;
+  font-size: 14px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+/* Highlight developer name */
+.footer strong {
+  color: #ffcc00;
+}
+
+/* ✅ Fix extra bottom space */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 600px) {
+  .footer {
+    font-size: 10px;
+    padding: 0px;
+  }
+}
