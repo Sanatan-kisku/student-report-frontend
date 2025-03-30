@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .get-report-container {
-  background: url('/OAVSuradaSchool.jpg') no-repeat center center/cover;
+  background: url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Keeps the image fixed while scrolling */
