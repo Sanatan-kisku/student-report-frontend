@@ -4,7 +4,7 @@ import GetReport from "./components/GetReport";
 import ReportCard from "./components/ReportCard";
 import AdminLogin from "./components/AdminLogin";
 import UploadFiles from "./components/UploadFiles";
-import "./styles/Footer.css";
+import "./styles/footer.css";
 
 const Footer = () => (
   <footer className="footer">
