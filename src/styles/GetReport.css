@@ -10,6 +10,10 @@ body, html {
   height: 100%;
 }
 
+.routes {
+  flex: 1;
+}
+
 .get-report-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../public/OAVSuradaSchool.jpg') no-repeat center center/cover;
   background-size: cover;

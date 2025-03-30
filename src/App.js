@@ -4,6 +4,15 @@ import GetReport from "./components/GetReport";
 import ReportCard from "./components/ReportCard";
 import AdminLogin from "./components/AdminLogin";
 import UploadFiles from "./components/UploadFiles";
+import "./styles/Footer.css";
+
+const Footer = () => (
+  <footer className="footer">
+    <p>
+      Website Designed and Developed by <strong>Mr. Sanatan Kisku</strong>, PGT Computer Science, OAV Surada
+    </p>
+  </footer>
+);
 
 function App() {
   const [token, setToken] = useState(null);
@@ -24,6 +33,7 @@ function App() {
         <Route path="/admin-login" element={<AdminLogin setToken={setToken} />} />
         <Route path="/admin-upload" element={token ? <UploadFiles /> : <AdminLogin setToken={setToken} />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
