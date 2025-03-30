@@ -38,7 +38,7 @@ body, html {
 /* ✅ Mobile Responsive */
 @media (max-width: 600px) {
   .footer {
-    font-size: 12px;
+    font-size: 13px;
     padding: 0px;
   }
 }
