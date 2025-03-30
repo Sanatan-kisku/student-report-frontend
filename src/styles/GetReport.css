@@ -29,6 +29,14 @@
   text-transform: uppercase;
 } 
 
+.staff-container {
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Aligns them vertically */
+  gap: 40px; /* Space between the divs */
+  margin-top: 20px;
+}
+
 .principal-container {
   text-align: center;
   margin-bottom: 20px;

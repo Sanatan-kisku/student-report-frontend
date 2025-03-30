@@ -55,16 +55,18 @@ const GetReport = () => {
     <div className="get-report-container">
       <h1 className="school-heading">Odisha Adarsha Vidyalaya, Surada, Ganjam</h1>
       {/* Principal's Image and Details */}
-      <div className="principal-container">
-        <img src="/principal.jpg" alt="Principal" className="principal-image" />
-        <p className="principal-name">Mr. Ashis Mishra</p>
-        <p className="principal-designation">Principal, OAV Surada</p>
-      </div>
-      {/* Exam Incharge's Image and Details */}
-      <div className="examincharge-container">
-        <img src="/examincharge.jpg" alt="Exam Incharge" className="examincharge-image" />
-        <p className="examincharge-name">Mr. Chinmaya Kumar Panigrahi</p>
-        <p className="examincharge-designation">Exam Incharge, OAV Surada</p>
+      <div className="staff-container">
+        <div className="principal-container">
+          <img src="/principal.jpg" alt="Principal" className="principal-image" />
+          <p className="principal-name">Mr. Ashis Mishra</p>
+          <p className="principal-designation">Principal, OAV Surada</p>
+        </div>
+        {/* Exam Incharge's Image and Details */}
+        <div className="examincharge-container">
+          <img src="/examincharge.jpg" alt="Exam Incharge" className="examincharge-image" />
+          <p className="examincharge-name">Mr. Chinmaya Kumar Panigrahi</p>
+          <p className="examincharge-designation">Exam Incharge, OAV Surada</p>
+        </div>
       </div>
       <div className="form-box">
         <h2>Student Report Card</h2>
