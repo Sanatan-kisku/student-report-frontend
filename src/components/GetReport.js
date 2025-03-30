@@ -70,12 +70,11 @@ const GetReport = () => {
       </div>
       <div className="form-box">
         <h2>Student Report Card</h2>
-        {/* Show a message when reports are available */}
-        {publishedClasses.length > 0 && (
+        {/* {publishedClasses.length > 0 && (
           <p className="published-info">
             📢 Annual Report Card for Class {publishedClasses.join(", ")} has been published!
           </p>
-        )}
+        )} */}
         <div className="form-row">
           <div>
             <label>Class</label>
