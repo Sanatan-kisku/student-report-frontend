@@ -180,18 +180,18 @@ select, input {
   display: flex;
   justify-content: center; /* Centers items horizontally */
   align-items: center; /* Aligns them vertically */
-  gap: 20px; /* Space between the divs */
+  gap: 40px; /* Space between the divs */
   margin-top: 10px;
 }
 
 .principal-container {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .principal-image {
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #333;
@@ -213,12 +213,12 @@ select, input {
 
 .examincharge-container {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .examincharge-image {
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #333;
