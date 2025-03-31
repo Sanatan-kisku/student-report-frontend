@@ -145,6 +145,7 @@ select, input {
   border-radius: 5px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  margin: 5px;
 }
 
 .get-report-btn {
