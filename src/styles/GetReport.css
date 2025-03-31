@@ -215,14 +215,14 @@ select, input {
   display: flex;
   justify-content: center; /* Centers items horizontally */
   align-items: center; /* Aligns them vertically */
-  gap: 40px; /* Space between the divs */
+  gap: 20px; /* Space between the divs */
   margin-top: 1px;
 }
 
 .principal-container {
   text-align: center;
   margin-bottom: 20px;
-  width: 100px;
+  width: 150px;
 }
 
 .principal-image {
@@ -234,14 +234,14 @@ select, input {
 }
 
 .principal-name {
-  font-size: 9px;
+  font-size: 13px;
   color: white;
   font-weight: bold;
   margin: 3px;
 }
 
 .principal-designation {
-  font-size: 8px;
+  font-size: 10px;
   color: white;
   margin: 3px;
   white-space: nowrap;
@@ -250,8 +250,8 @@ select, input {
 .examincharge-container {
   text-align: center;
   margin-top: 9px;
-  margin-bottom: 20px;
-  width: 100px;
+  margin-bottom: 11px;
+  width: 150px;
 }
 
 .examincharge-image {
@@ -263,14 +263,14 @@ select, input {
 }
 
 .examincharge-name {
-  font-size: 9px;
+  font-size: 13px;
   color: white;
   font-weight: bold;
   margin: 3px;
 }
 
 .examincharge-designation {
-  font-size: 8px;
+  font-size: 10px;
   color: white;
   margin: 3px;
   white-space: nowrap;
