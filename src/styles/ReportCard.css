@@ -191,19 +191,22 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   color: red;
   font-weight: bold;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   background-color: #fff3cd; /* Light yellow background for visibility */
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ffeeba;
 }
 
+.download-warning p{
+  margin: 0;
+}
+
 .floating-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
   gap: 10px; /* Space between buttons */
   z-index: 1000; /* Ensure it stays above other elements */
 }
@@ -215,8 +218,9 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   background-color: #007bff;
   color: white;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
   transition: 0.3s ease;
 }
 
