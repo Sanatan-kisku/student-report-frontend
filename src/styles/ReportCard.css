@@ -196,6 +196,7 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ffeeba;
+  width: 100%;
 }
 
 .download-warning p{
@@ -206,7 +207,7 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   position: relative;
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
   gap: 10px; /* Space between buttons */
   z-index: 1000; /* Ensure it stays above other elements */
 }
