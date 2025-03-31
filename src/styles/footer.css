@@ -28,6 +28,10 @@
   color: #ffcc00;
 }
 
+.footer p{
+  margin: 10px 0;
+}
+
 /* ✅ Fix extra bottom space */
 body, html {
   margin: 0;
