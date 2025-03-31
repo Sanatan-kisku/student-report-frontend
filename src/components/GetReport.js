@@ -102,15 +102,10 @@ const GetReport = () => {
           </div>
         </div>
         <div className="form-row">
-          <div>
-            <input type="text"
-              value={form.dob}
-              onFocus={(e) => (e.target.type = "date")}
-              onBlur={(e) => {
-                if (!e.target.value) e.target.type = "text";
-              }}
+          <div className="dob-container">
+            <label>Date of Birth</label>
+            <input type="date"
               onChange={(e) => setForm({ ...form, dob: e.target.value })}
-              placeholder="Date of Birth"
             />
           </div>
         </div>

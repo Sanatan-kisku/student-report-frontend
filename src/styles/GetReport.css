@@ -148,6 +148,16 @@ select, input {
   margin: 5px;
 }
 
+.dob-container {
+  display: flex;
+  align-items: center; /* Align label and input in the center */
+  gap: 10px; /* Space between label and input */
+}
+
+.dob-container label {
+  white-space: nowrap; /* Prevent label from wrapping */
+}
+
 .get-report-btn {
   background: #007bff;
   color: white;
