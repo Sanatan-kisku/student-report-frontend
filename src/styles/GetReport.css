@@ -151,16 +151,16 @@ select, input {
 /* Style the select dropdown */
 select {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
+  padding: 8.5px;
+  font-size: 13px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   background-color: white;
   cursor: pointer;
   appearance: none; /* Removes default browser arrow */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'><path fill='gray' d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-position: right 1px center;
   background-size: 15px;
 }
 
