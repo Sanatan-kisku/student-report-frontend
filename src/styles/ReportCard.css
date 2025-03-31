@@ -5,6 +5,10 @@ body, html {
   overflow-x: hidden;
 }
 
+.report-container {
+  min-height: 90.3vh;
+}
+
 .header-section {
   display: flex;
   width: 100%;
@@ -257,7 +261,7 @@ td:nth-of-type(2) .signature-img { /* Second signature */
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
   .report-card {
-    width: 95%; /* Ensure it fits on mobile */
+    width: 90%; /* Ensure it fits on mobile */
     padding: 10px;
     margin: auto;
   }
