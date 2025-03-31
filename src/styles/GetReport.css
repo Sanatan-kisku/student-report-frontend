@@ -148,6 +148,40 @@ select, input {
   margin: 5px;
 }
 
+/* Style the select dropdown */
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  appearance: none; /* Removes default browser arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'><path fill='gray' d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+/* When the select is focused */
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Add spacing for dropdown container */
+.form-row select {
+  margin-right: 10px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+  border: 1px solid #007bff; /* Blue border on focus */
+}
+
 .dob-container {
   display: flex;
   align-items: center; /* Align label and input in the center */
