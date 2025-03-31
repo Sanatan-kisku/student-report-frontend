@@ -15,8 +15,8 @@ const classMapping = {
 
 const GetReport = () => {
   const [form, setForm] = useState({
-    class: "6",
-    section: "A",
+    class: "",
+    section: "",
     rollNumber: "",
     dob: "",
   });
