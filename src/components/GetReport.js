@@ -77,24 +77,24 @@ const GetReport = () => {
         )}
         <div className="form-row">
           <div>
-            <label>Class</label>
             <select value={form.class} onChange={(e) => setForm({ ...form, class: e.target.value })}>
+              <option value="" disabled>Select Class</option>
               {[...Array(7)].map((_, i) => (
                 <option key={i} value={i + 6}>{i + 6}</option>
               ))}
             </select>
           </div>
           <div>
-            <label>Section</label>
             <select value={form.section} onChange={(e) => setForm({ ...form, section: e.target.value })}>
+              <option value="" disabled>Select Section</option>
               <option value="A">A</option>
               <option value="B">B</option>
             </select>
           </div>
           <div>
-            <label>Roll Number</label>
             <input
               type="number"
+              placeholder="Enter Roll Number"
               value={form.rollNumber}
               onChange={(e) => setForm({ ...form, rollNumber: e.target.value })}
               min="1"
@@ -103,8 +103,7 @@ const GetReport = () => {
         </div>
         <div className="form-row">
           <div>
-            <label>Date of Birth</label>
-            <input type="date" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
+            <input type="date" placeholder="Date of Birth" onChange={(e) => setForm({ ...form, dob: e.target.value })} />
           </div>
         </div>
         <div>
