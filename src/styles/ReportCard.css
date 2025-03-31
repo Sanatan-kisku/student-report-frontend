@@ -1,7 +1,8 @@
 body, html {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0;  
+  overflow-x: hidden;
 }
 
 .header-section {
@@ -360,5 +361,9 @@ td:nth-of-type(2) .signature-img { /* Second signature */
 
   td:nth-of-type(2) .signature-img { /* Second signature */
     width: 45px;
+  }
+
+  .download-warning {
+    font-size: 8px !important;
   }
 }
