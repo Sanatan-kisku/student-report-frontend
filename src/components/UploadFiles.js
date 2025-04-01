@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import BulkDownload from "../components/BulkDownload";
 
 const UploadFiles = () => {
   const [selectedFiles, setSelectedFiles] = useState({
@@ -59,6 +60,7 @@ const UploadFiles = () => {
       <input type="file" name="studentInfo" onChange={handleFileChange} />
       <input type="file" name="academicProgress" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
+      <BulkDownload />
     </div>
   );
 };
