@@ -337,6 +337,7 @@ const ReportCard = () => {
           <table className="signature">
             <tr>
               <td>
+                <img src="/BlankSignature.jpg" className="signature-img" />
                 <p>CLASS TEACHER</p>
               </td>
               <td>
@@ -350,6 +351,7 @@ const ReportCard = () => {
             </tr>
             <tr>
               <td>
+                <img src="/BlankSignature.jpg" className="signature-img" />
                 <p>PARENT'S SIGNATURE</p>
               </td>
             </tr>

@@ -161,6 +161,7 @@ h2 {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  table-layout: fixed; 
 }
 /* 
 .signature-section table {
