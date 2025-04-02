@@ -205,6 +205,14 @@ td:nth-of-type(2) .signature-img { /* Second signature */
   width: 120px;
 }
 
+.signature td:nth-child(2) { /* Exam Incharge */
+  text-align: center;
+}
+
+.signature td:nth-child(3) { /* Principal */
+  text-align: right;
+}
+
 .subject, .activity {
   text-align: left;
 }
