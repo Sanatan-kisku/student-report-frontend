@@ -203,7 +203,7 @@ td:nth-of-type(1) .signature-img { /* First signature */
 }
 
 td:nth-of-type(2) .signature-img { /* Second signature */
-  width: 180px;
+  width: 140px;
   display: block;
   margin-left: auto;
 }
