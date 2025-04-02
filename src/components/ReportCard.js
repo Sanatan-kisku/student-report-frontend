@@ -124,8 +124,17 @@ const ReportCard = () => {
     });
   };
 
-
-
+  function printReportCard() {
+    const reportCard = document.querySelector('.report-card'); // Select report card section
+    const newWindow = window.open('', '', 'width=900,height=700'); // Open a new print window
+    newWindow.document.write('<html><head><title>Print Report Card</title>');
+    newWindow.document.write('<style>body{ font-family: "Times New Roman", serif; }</style>');
+    newWindow.document.write('</head><body>');
+    newWindow.document.write(reportCard.outerHTML); // Add report card HTML
+    newWindow.document.write('</body></html>');
+    newWindow.document.close();
+    newWindow.print(); // Trigger print
+  }
   // const handleDownloadPDF = () => {
   //   const reportCardElement = document.querySelector(".report-card");
 
@@ -363,6 +372,7 @@ const ReportCard = () => {
       </div>
       <div className="download-btn floating-buttons" style={{ textAlign: "center" }}>
         <button onClick={handleDownloadPDF}>Download PDF</button>
+        <button onclick="printReportCard()">Print Report Card</button>
         <button onClick={() => navigate("/")}>Return Home</button>
       </div>
     </div>
