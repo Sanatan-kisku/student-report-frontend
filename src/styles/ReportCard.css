@@ -160,7 +160,7 @@ h2 {
 .signature {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
+  text-align: left;
 }
 /* 
 .signature-section table {
@@ -176,6 +176,7 @@ h2 {
   width: 50%; */
   padding: 20px;
   vertical-align: bottom;
+  border-style: none;
 }
 
 .signature p {
