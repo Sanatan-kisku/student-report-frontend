@@ -154,7 +154,7 @@ h2 {
 .signature-section {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .signature {
@@ -175,7 +175,7 @@ h2 {
   text-align: center;
   padding: 30px 0;
   width: 50%; */
-  padding: 20px;
+  /* padding: 20px; */
   vertical-align: bottom;
   border-style: none;
 }
@@ -197,7 +197,7 @@ h2 {
 }
 
 td:nth-of-type(1) .signature-img { /* First signature */
-  width: 180px;
+  width: 68px;
   display: block;
   margin: 0 auto;
 }
@@ -409,7 +409,7 @@ td:nth-of-type(3) .signature-img { /* Third signature */
 
   td:nth-of-type(3) .signature-img { /* Second signature */
     width: 45px;
-    margin-right: -10px;
+    margin-right: -8px;
   }
 
   .download-warning {
