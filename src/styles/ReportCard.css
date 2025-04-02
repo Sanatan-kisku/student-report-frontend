@@ -197,7 +197,7 @@ h2 {
 }
 
 td:nth-of-type(1) .signature-img { /* First signature */
-  width: 68px;
+  width: 180px;
   display: block;
   margin: 0 auto;
 }
@@ -368,7 +368,7 @@ td:nth-of-type(3) .signature-img { /* Third signature */
 
   .signature th, .signature td {
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     border-style: none;
   }
 
@@ -401,6 +401,10 @@ td:nth-of-type(3) .signature-img { /* Third signature */
     height: auto;
     display: block;
     /* margin: 0 0; */
+  }
+
+  td:nth-of-type(1) .signature-img { /* First signature */
+    width: 70px;
   }
 
   td:nth-of-type(2) .signature-img { /* First signature */
