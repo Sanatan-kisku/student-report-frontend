@@ -337,12 +337,20 @@ const ReportCard = () => {
           <table className="signature">
             <tr>
               <td>
+                <p>CLASS TEACHER</p>
+              </td>
+              <td>
                 <img src="/ExamInchargeSignature.jpg" alt="Exam Incharge Signature" className="signature-img" />
-                <p>Exam Incharge</p>
+                <p>EXAM INCHARGE</p>
               </td>
               <td>
                 <img src="/PrincipalSignature.jpg" alt="Principal Signature" className="signature-img" />
-                <p>Principal</p>
+                <p>PRINCIPAL</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>PARENT'S SIGNATURE</p>
               </td>
             </tr>
           </table>
