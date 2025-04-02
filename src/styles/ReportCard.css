@@ -214,9 +214,6 @@ td:nth-of-type(2) .signature-img { /* Second signature */
 }
 
 .signature td:nth-child(3) { /* Principal */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   text-align: right;
 }
 
