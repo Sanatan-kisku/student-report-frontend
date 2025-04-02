@@ -211,7 +211,7 @@ td:nth-of-type(2) .signature-img { /* Second signature */
 td:nth-of-type(3) .signature-img { /* Third signature */
   width: 140px;
   display: block;
-  margin-left: auto;
+  margin-right: -18px;
 }
 
 .signature td:nth-child(2) { /* Exam Incharge */
