@@ -409,6 +409,7 @@ td:nth-of-type(3) .signature-img { /* Third signature */
 
   td:nth-of-type(3) .signature-img { /* Second signature */
     width: 45px;
+    margin-right: -10px;
   }
 
   .download-warning {
