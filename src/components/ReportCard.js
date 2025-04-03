@@ -34,8 +34,8 @@ const ReportCard = () => {
   };
 
   const teacherSignatures = {
-    "8A": "signatures/BiswajitBadaraita.png",
-    "9B": "signatures/TMohanRao.png",
+    "VIIIA": "signatures/BiswajitBadaraita.png",
+    "IXB": "signatures/TMohanRao.png",
   };
 
   const studentClass = studentInfo.class + studentInfo.section; // Example: "6A"
