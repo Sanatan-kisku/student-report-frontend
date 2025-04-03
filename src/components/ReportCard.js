@@ -34,18 +34,8 @@ const ReportCard = () => {
   };
 
   const teacherSignatures = {
-    "6A": "/signatures/",
-    "6B": "/signatures/",
-    "7A": "/signatures/",
-    "7B": "/signatures/",
-    "8A": "/signatures/BiswajitBadaraita.png",
-    "8B": "/signatures/",
-    "9A": "/signatures/",
-    "9B": "/signatures/TMohanRao.png",
-    "10A": "/signatures/",
-    "10B": "/signatures/",
-    "11A": "/signatures/",
-    "12A": "/signatures/"
+    "8A": "signatures/BiswajitBadaraita.png",
+    "9B": "signatures/TMohanRao.png",
   };
 
   const studentClass = studentInfo.class + studentInfo.section; // Example: "6A"
@@ -368,10 +358,14 @@ const ReportCard = () => {
               <td>
                 {teacherSignature && (
                   <div className="teacher-signature">
-                    <img src={teacherSignature} alt="Teacher's Signature" className="signature-img" />
+                    <img
+                      src={teacherSignature || "/signatures/BlankSignature.png"}
+                      alt="Teacher's Signature"
+                      className="signature-img"
+                      onError={(e) => e.target.src = "/signatures/BlankSignature.png"}
+                    />
                   </div>
                 )}
-
                 <p>CLASS TEACHER</p>
               </td>
               <td>
