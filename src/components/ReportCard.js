@@ -36,12 +36,13 @@ const ReportCard = () => {
   const teacherSignatures = {
     "VIIIA": "signatures/BiswajitBadaraita.png",
     "IXB": "signatures/TMohanRao.png",
+    "XIA": "signatures/HimansuSekharSabar.png",
   };
 
   const studentClass = studentInfo.class + studentInfo.section; // Example: "6A"
-  console.log(studentClass)
+  // console.log(studentClass)
   const teacherSignature = teacherSignatures[studentClass] || "";
-  console.log(teacherSignature)
+  // console.log(teacherSignature)
 
   // const studentClass = report["Class"] + report["Section"]; // Example: "6A"
   // const teacherInfo = teacherSignatures[studentClass] || { name: "Unknown", signature: "" };
