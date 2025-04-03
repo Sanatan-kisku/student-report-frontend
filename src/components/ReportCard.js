@@ -39,6 +39,7 @@ const ReportCard = () => {
   };
 
   const studentClass = studentInfo.class + studentInfo.section; // Example: "6A"
+  console.log(studentClass)
   const teacherSignature = teacherSignatures[studentClass] || "";
   console.log(teacherSignature)
 
@@ -379,7 +380,7 @@ const ReportCard = () => {
             </tr>
             <tr>
               <td>
-                <img src="/BlankSignature.jpg" className="signature-img" />
+                <img src="/signatures/BlankSignature.jpg" className="signature-img" />
                 <p>PARENT'S SIGNATURE</p>
               </td>
             </tr>
