@@ -33,6 +33,26 @@ const ReportCard = () => {
     result: report["Result"],
   };
 
+  const teacherSignatures = {
+    "6A": "/signatures/mr_sharma.png",
+    "6B": "/signatures/ms_verma.png",
+    "7A": "/signatures/mr_gupta.png",
+    "7B": "/signatures/mrs_kapoor.png",
+    "8A": "/signatures/BiswajitBadaraita.png",
+    "8B": "/signatures/mr_nayak.png",
+    "9A": "/signatures/mr_singh.png",
+    "9B": "/signatures/TMohanRao.png",
+    "10A": "/signatures/mr_iyer.png",
+    "10B": "/signatures/ms_sinha.png",
+    "11A": "/signatures/mr_kumar.png",
+    "11B": "/signatures/mrs_dutta.png",
+    "12A": "/signatures/mr_bose.png",
+    "12B": "/signatures/mrs_mishra.png",
+  };
+
+  const studentClass = report["Class"] + report["Section"]; // Example: "6A"
+  const teacherInfo = teacherSignatures[studentClass] || { name: "Unknown", signature: "" };
+
   // useEffect(() => {
   //   if (studentInfo.rank === 1) {
   //     let count = 300; // Start with 300 pieces
@@ -344,8 +364,12 @@ const ReportCard = () => {
           <table className="signature">
             <tr>
               <td>
-                <img src="/BlankSignature.jpg" className="signature-img" />
-                <p>CLASS TEACHER</p>
+                {teacherInfo.signature && (
+                  <div className="teacher-signature">
+                    <img src={teacherInfo.signature} alt="Teacher's Signature" className="signature-img" />
+                    <p>CLASS TEACHER</p>
+                  </div>
+                )}
               </td>
               <td>
                 <img src="/ExamInchargeSignature.jpg" alt="Exam Incharge Signature" className="signature-img" />
