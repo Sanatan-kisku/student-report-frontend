@@ -50,8 +50,11 @@ const ReportCard = () => {
     "12B": "/signatures/mrs_mishra.png",
   };
 
-  const studentClass = report["Class"] + report["Section"]; // Example: "6A"
-  const teacherInfo = teacherSignatures[studentClass] || { name: "Unknown", signature: "" };
+  const studentClass = studentInfo.class + studentInfo.section; // Example: "6A"
+  const teacherSignature = teacherSignatures[studentClass] || "";
+
+  // const studentClass = report["Class"] + report["Section"]; // Example: "6A"
+  // const teacherInfo = teacherSignatures[studentClass] || { name: "Unknown", signature: "" };
 
   // useEffect(() => {
   //   if (studentInfo.rank === 1) {
@@ -364,12 +367,13 @@ const ReportCard = () => {
           <table className="signature">
             <tr>
               <td>
-                {teacherInfo.signature && (
+                {teacherSignature && (
                   <div className="teacher-signature">
-                    <img src={teacherInfo.signature} alt="Teacher's Signature" className="signature-img" />
-                    <p>CLASS TEACHER</p>
+                    <img src={teacherSignature} alt="Teacher's Signature" className="signature-img" />
                   </div>
                 )}
+
+                <p>CLASS TEACHER</p>
               </td>
               <td>
                 <img src="/ExamInchargeSignature.jpg" alt="Exam Incharge Signature" className="signature-img" />
