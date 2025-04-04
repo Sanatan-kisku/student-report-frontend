@@ -34,10 +34,10 @@ const ReportCard = () => {
   };
 
   const teacherSignatures = {
-    "VIA": "signatures/AparnaMalla.png",
-    "VIIIA": "signatures/BiswajitBadaraita.png",
-    "IXB": "signatures/TMohanRao.png",
-    "XIA": "signatures/HimansuSekharSabar.png",
+    // "VIA": "signatures/AparnaMalla.png",
+    // "VIIIA": "signatures/BiswajitBadaraita.png",
+    // "IXB": "signatures/TMohanRao.png",
+    // "XIA": "signatures/HimansuSekharSabar.png",
   };
 
   const studentClass = studentInfo.class + studentInfo.section; // Example: "6A"
