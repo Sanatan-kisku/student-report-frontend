@@ -135,7 +135,7 @@ const ReportCard = () => {
         pdf.addImage(imgData, "JPEG", pdfMargin, pdfMargin, imgWidth, imgHeight); // Normal case
       }
 
-      pdf.save(`${studentInfo.name}-${studentInfo.class}${studentInfo.section}-${studentInfo.rollNumber} Report Card.pdf`);
+      pdf.save(`${studentInfo.class}${studentInfo.section}-${studentInfo.rollNumber}-${studentInfo.name} Report Card.pdf`);
     });
   };
 
