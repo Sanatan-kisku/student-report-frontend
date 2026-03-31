@@ -239,7 +239,7 @@ const ReportCard = () => {
           <img src="/OavLogo.jpeg" alt="Right" className="header-image box right" />
         </div>
         <h3>Affiliated to CBSE, New Delhi, Affiliation No. - 1520050, School No. - 17193, U-DISE CODE - 21192228501 </h3>
-        <h2>PROGRESS REPORT CARD 2024-25</h2>
+        <h2>PROGRESS REPORT CARD 2025-26</h2>
         {/* <div>
           <p><strong>Name:</strong> {studentInfo.name}</p>
           <p><strong>Class:</strong> {studentInfo.class} <strong>Section:</strong> {studentInfo.section} <strong>Roll No:</strong> {studentInfo.rollNumber}</p>
