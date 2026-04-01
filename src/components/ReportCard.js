@@ -36,7 +36,7 @@ const ReportCard = () => {
   const teacherSignatures = {
      "VIA": "signatures/AparnaMalla.png",
      "VIB": "signatures/BharatiRao.png",
-     "VIIA": "signatures/MohanRao.png",
+     "VIIA": "signatures/TMohanRao.png",
      "VIIB": "signatures/JitendraSenapati.png",
      "VIIIA": "signatures/BiswajitBadaraita.png",
      "VIIIB": "signatures/ManoranjanPanigrahi.png",
