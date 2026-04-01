@@ -40,7 +40,7 @@ const ReportCard = () => {
      "VIIB": "signatures/JitendraSenapati.png",
      "VIIIA": "signatures/BiswajitBadaraita.png",
      "VIIIB": "signatures/ManoranjanPanigrahi.png",
-     "IXA": "signatures/SatabdiPatnaik.png"
+     "IXA": "signatures/SatabdiPatnaik.png",
      "IXB": "signatures/SanatanKisku.png",
      "XIA": "signatures/HimansuSekharSabar.png",
   };
